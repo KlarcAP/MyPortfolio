@@ -29,12 +29,20 @@ export const HeroContainer = styled.section`
       background-position: 0 50%;
     }
   }
-  img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 2rem;
+  #img-left {
+    width: 400px;
+    height: 400px;
     position: absolute;
-    flex: 1;
+    top: 40px;
+    left: 160px; 
+  }
+
+  #img-right {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    bottom: 40px;
+    right: 160px;
   }
 `;
 

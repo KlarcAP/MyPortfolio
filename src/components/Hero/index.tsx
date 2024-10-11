@@ -45,8 +45,8 @@ export const HeroSection: React.FC = () => {
 
   return (
     <HeroContainer>
-      <img src={require('../../assets/formaLiquida1.png')} alt="forma1"/>
-      <img src={require('../../assets/formaLiquida2.png')} alt="forma2"/>
+      <img id='img-left' src={require('../../assets/formaLiquida1.png')} alt="forma1"/>
+      <img id='img-right' src={require('../../assets/formaLiquida2.png')} alt="forma2"/>
       <IntroductionBox>
         <h1>Olá! Me chamo Klarc.</h1>
         <div className="txt-animado">{currentText}</div>
