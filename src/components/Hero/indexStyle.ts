@@ -9,19 +9,32 @@ const blinkCaret = keyframes`
 export const HeroContainer = styled.section`
   display: flex;
   background: rgb(20,0,36);
-  background: linear-gradient(0deg, rgba(20,0,36,0.944) 0%, rgba(67,9,121,1) 22%, rgba(175,0,255,1) 89%);
+  background: linear-gradient(-45deg, #FF204E, #A0153E, #5D0E41, #00224D );
+  background-size: 400% 400%;
   width: 100vw;
   height: 100vh;
-  text-align: center;
+  align-items: center;
+  justify-content:center;
   color: #fff;
+  animation: efectMotion 15s ease infinite;
 
+  @keyframes efectMotion {
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    0%{
+      background-position: 0 50%;
+    }
+  }
   img {
     width: 200px;
     height: 200px;
-    border-radius: 100%;
-    border: 1px solid black;
     margin-bottom: 2rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: absolute;
+    flex: 1;
   }
 `;
 
