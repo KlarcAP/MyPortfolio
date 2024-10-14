@@ -36,8 +36,8 @@ export const GlobalStyle = createGlobalStyle`
     }    
 
     body {
-        background: var(--background);
-        font-family: Arial, sans-serif;
+        background-color: #131313;
+        font-family: Poppins; 
         -webkit-font-smoothing: antialiased;
     }
 

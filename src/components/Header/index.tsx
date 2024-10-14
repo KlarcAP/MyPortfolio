@@ -8,9 +8,8 @@ export function Header(){
         <span><a href="/">Home</a></span>
         <span><a href="/">Sobre</a></span>
         <span><a href="/">Projetos</a></span>
+        <span><a href="/">Contato</a></span>
       </Nav>
-
-      <ButtonContactMe>Contate me</ButtonContactMe>
     </HeaderContainer>
   )
 }

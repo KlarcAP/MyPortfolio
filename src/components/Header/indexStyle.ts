@@ -7,10 +7,11 @@ export const HeaderContainer = styled.header`
   height: 80px;
   width: 100vw;
   background-color: transparent;
-  border-bottom: 1px solid black !important;
+  border-bottom: 1px solid white !important;
   color: #ffff;
   justify-content: space-between;
   position: fixed;
+  z-index: 2;
 
   img{
     padding: 2rem;
@@ -22,15 +23,16 @@ export const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 50px;
+  margin-right: 50px;
 
   span{
-    margin-right: 20px;
-    
+    cursor: pointer;
     
     a{
       text-decoration: none;
       color: #ffff;
+      
     }
   }
 `;

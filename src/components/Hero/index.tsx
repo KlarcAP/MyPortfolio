@@ -3,53 +3,13 @@ import { useState, useEffect } from 'react';
 import { HeroContainer, IntroductionBox } from "./indexStyle";
 
 export const HeroSection: React.FC = () => {
-  const [currentText, setCurrentText] = useState<string>('');
-  const [isDeleting, setIsDeleting] = useState<boolean>(false);
-  const [loopNum, setLoopNum] = useState<number>(0);
-  const [typingSpeed, setTypingSpeed] = useState<number>(200); // Velocidade da digitação
-
-  const phrases = [
-    "Front-End Developer", 
-    "Mobile Developer", 
-    "UX/UI Designer", 
-  ];
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  useEffect(() => {
-    const handleTyping = () => {
-      const currentPhrase = phrases[loopNum % phrases.length];
-      const updatedText = isDeleting 
-        ? currentPhrase.substring(0, currentText.length - 1) // Deleta caracteres
-        : currentPhrase.substring(0, currentText.length + 1); // Adiciona caracteres
-      
-      setCurrentText(updatedText);
-
-      // Se estiver deletando, velocidade mais rápida
-      setTypingSpeed(isDeleting ? 100 : 200);
-
-      // Quando o texto estiver completo
-      if (!isDeleting && updatedText === currentPhrase) {
-        setTimeout(() => setIsDeleting(true), 1000); // Pausa antes de começar a deletar
-      } 
-      // Quando o texto estiver completamente deletado
-      else if (isDeleting && updatedText === '') {
-        setIsDeleting(false); // Muda para adicionar a próxima frase
-        setLoopNum(loopNum + 1); // Passa para a próxima frase
-      }
-    };
-
-    const typingTimeout = setTimeout(handleTyping, typingSpeed);
-
-    return () => clearTimeout(typingTimeout);
-  }, [currentText, isDeleting, loopNum]); // Dependências controlam a digitação e deleção
 
   return (
     <HeroContainer>
-      <img id='img-left' src={require('../../assets/formaLiquida1.png')} alt="forma1"/>
-      <img id='img-right' src={require('../../assets/formaLiquida2.png')} alt="forma2"/>
+      <img id="background" src={require('../../assets/microchip-processor-background-realistic-style.png')} alt="Hero Left"/>
       <IntroductionBox>
-        <h1>Olá! Me chamo Klarc.</h1>
-        <div className="txt-animado">{currentText}</div>
+        <h1>WEB DEVELOPER</h1>
+        <div className="info-introduction-about-me">Sou Freelancer com 7 meses de experiência, especializado na criação de sites personalizados para pequenas e médias empresas. Tenho proficiência em HTML, CSS, JavaScript, Node e React, que utilizo para desenvolver interfaces intuitivas e responsivas.</div>
       </IntroductionBox>
     </HeroContainer>
   );

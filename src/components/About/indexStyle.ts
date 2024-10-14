@@ -7,15 +7,7 @@ export const AboutMe = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, #FF204E, #A0153E, #5D0E41, #00224D );
-    background-size: 400% 400%;
-    animation: AboutMeBackgroundMotion 12s ease-in-out infinite;
-
-    @keyframes AboutMeBackgroundMotion {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        0% { background-position: 0% 50%; }
-    }
+    
 `;
 
 export const AboutMeContext = styled.div`
@@ -23,7 +15,7 @@ export const AboutMeContext = styled.div`
     gap: 2rem;
     width: 750px;
     height: 360px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 2rem;
     background-color: transparent;
     backdrop-filter: blur(30px);
