@@ -4,23 +4,18 @@ export const AboutMe = styled.section`
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
     
 `;
 
 export const AboutMeContext = styled.div`
-    display: inline-block;
-    gap: 2rem;
     width: 750px;
     height: 360px;
+    margin: auto 1rem;
     border: 1px solid white;
     border-radius: 2rem;
-    background-color: transparent;
-    backdrop-filter: blur(30px);
-
-    
+    background-color: white transparent;
+    backdrop-filter: blur(10px);
 
     h2 {
         color: var(--text-title);
@@ -33,7 +28,7 @@ export const AboutMeContext = styled.div`
     p {
         color: var(--text-title);
         font-size: 1.2rem;
-        line-height: 1.5;
+        line-height: 1.2;
         margin: 1rem 2rem 0 1rem;
         color: #ffff;
     }
@@ -54,4 +49,14 @@ export const AboutMeContext = styled.div`
         gap: 0.25rem;
     }
 
+`;
+
+export const AboutMePhoto = styled.div`
+    display: flex;
+    margin: auto;
+    img{
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+    }
 `;

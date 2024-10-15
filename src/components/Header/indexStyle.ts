@@ -11,10 +11,12 @@ export const HeaderContainer = styled.header`
   color: #ffff;
   justify-content: space-between;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 
   img{
     padding: 2rem;
+    width: 150px;
+    cursor: pointer;
   }
 
 `
