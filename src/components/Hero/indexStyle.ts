@@ -1,5 +1,5 @@
 
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const HeroContainer = styled.section`
   display: flex;
@@ -8,6 +8,8 @@ export const HeroContainer = styled.section`
   align-items: center;
   justify-content:center;
   color: #fff;
+  
+
 
   #background {
     width: 100%;
@@ -22,12 +24,9 @@ export const HeroContainer = styled.section`
 
 export const IntroductionBox = styled.div`
   display: flex;
-  text-align: center;
   flex-direction: column;
-  align-self: flex-start;
-  justify-content: center;
-  width: 100%;
-  margin: auto;
+  
+  width: 30%;
   padding: 5rem;
   position: relative;
   z-index: 2;
@@ -35,6 +34,8 @@ export const IntroductionBox = styled.div`
   h1 {
     font-size: 6rem;
     font-weight: bold;
+    word-wrap: break-word;
+    
     color: #fff; /* Mudei a cor para combinar com o fundo escuro */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     letter-spacing: -1px;
@@ -78,6 +79,27 @@ export const IntroductionBox = styled.div`
   
     h1 {
       font-size: 4rem;
+    }
+  }
+`;
+
+export const Image = styled.div`
+  display: flex;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    img {
+      width: 100%;
     }
   }
 `;

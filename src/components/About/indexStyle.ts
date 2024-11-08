@@ -5,6 +5,17 @@ export const AboutMe = styled.section`
     width: 100vw;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        font-size: 12rem;
+        font-weight: bold;
+        margin: 1rem 0 0 1rem;
+        color: 50% transparent;
+        z-index: 1;
+        position: absolute;
+    }
     
 `;
 
@@ -16,20 +27,14 @@ export const AboutMeContext = styled.div`
     border-radius: 2rem;
     background-color: white transparent;
     backdrop-filter: blur(10px);
-
-    h2 {
-        color: var(--text-title);
-        font-size: 2rem;
-        font-weight: bold;
-        margin: 1rem 0 0 1rem;
-        color: #ffff;
-    }
+    z-index: 4;
 
     p {
         color: var(--text-title);
         font-size: 1.2rem;
         line-height: 1.2;
-        margin: 1rem 2rem 0 1rem;
+        text-align: center;
+        margin: 4rem 2rem 0 1rem;
         color: #ffff;
     }
     

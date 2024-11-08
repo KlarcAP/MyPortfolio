@@ -2,31 +2,33 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 80px;
-  width: 100vw;
-  background-color: transparent;
-  border-bottom: 1px solid white !important;
-  color: #ffff;
   justify-content: space-between;
+  height: 100vh;
+  width: 80px;
+  background-color: #131313;
+  border-right: 1px solid white !important;
+  color: #ffff;
   position: fixed;
   z-index: 3;
 
   img{
-    padding: 2rem;
-    width: 150px;
+    width: 100px;
     cursor: pointer;
+    margin: 1rem;
   }
 
 `
 
 export const Nav = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  margin-right: 50px;
+  justify-content: center;
+  gap: 30px;
+  margin: auto;
+
 
   span{
     cursor: pointer;
@@ -36,6 +38,17 @@ export const Nav = styled.div`
       color: #ffff;
       
     }
+  }
+`;
+
+export const Footer = styled.footer`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+
+  a {
+    font-size: small;
   }
 `;
 

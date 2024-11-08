@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #131313;
-        font-family: Poppins; 
+        font-family: "Poppins"; 
         -webkit-font-smoothing: antialiased;
     }
 

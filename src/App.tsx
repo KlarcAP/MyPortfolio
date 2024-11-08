@@ -1,7 +1,7 @@
-import { GlobalStyle } from './style/global'
-import { Header} from './components/Header/index';
-import { HeroSection } from './components/Hero';
-import { SobreMim } from './components/About';
+import { SobreMim } from "./components/About";
+import { Header } from "./components/Header";
+import { HeroSection } from "./components/Hero";
+import { GlobalStyle } from "./style/global";
 
 function App() {
   return (
