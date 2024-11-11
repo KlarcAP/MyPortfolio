@@ -14,8 +14,8 @@ export function Header(){
     <HeaderContainer>
       <img src={Logo} alt="logoPng"/>
       <Nav>
-        <span><a href="/"><House/></a></span>
-        <span><a href="/"><UserRoundPen/></a></span>
+        <span><a href="/Home"><House/></a></span>
+        <span><a href="/sobremim"><UserRoundPen/></a></span>
         <span><a href="/"><CodeXml/></a></span>
         <span><a href="/"><UserRoundSearch/></a></span>
       </Nav>

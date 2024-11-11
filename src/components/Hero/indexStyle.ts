@@ -87,8 +87,12 @@ export const Image = styled.div`
   display: flex;
 
   img {
-    width: 100%;
-    height: auto;
+    width: 500px; /* ou qualquer tamanho desejado */
+    height: 600px; /* ou qualquer tamanho desejado */
+    object-fit: cover;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Para compatibilidade com WebKit */
+    margin-bottom: 5rem;
   }
   
   @media (max-width: 768px) {

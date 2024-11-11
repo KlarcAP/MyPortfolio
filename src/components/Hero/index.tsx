@@ -1,7 +1,6 @@
 import type React from 'react';
 import { HeroContainer, IntroductionBox, Image } from "./indexStyle";
-import ImagemHero from "../../assets/_Pngtree_web_page_design_templates_for_4977406-removebg-preview.png";
-
+import ImagemHero from "../../assets/KlarcProfileHome.png";
 export const HeroSection: React.FC = () => {
 
   return (

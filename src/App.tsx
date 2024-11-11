@@ -1,15 +1,16 @@
-import { SobreMim } from "./components/About";
 import { Header } from "./components/Header";
-import { HeroSection } from "./components/Hero";
+import { AnimatedRoutes } from "./components/Routes/AnimatedRoutes";
 import { GlobalStyle } from "./style/global";
+import { BrowserRouter as Router, useLocation} from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header/>
-      <HeroSection/>
-      <SobreMim/>
-      <GlobalStyle/>
+      <Router>
+        <Header />
+        <AnimatedRoutes/>
+        <GlobalStyle />
+      </Router>
     </>
   );
 }
