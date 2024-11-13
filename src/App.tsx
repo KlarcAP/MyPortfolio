@@ -1,7 +1,7 @@
 import { Header } from "./components/Header";
 import { AnimatedRoutes } from "./components/Routes/AnimatedRoutes";
 import { GlobalStyle } from "./style/global";
-import { BrowserRouter as Router, useLocation} from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import { HeaderContainer, Nav, Footer } from "./indexStyle";
-import Logo from "../../assets/J-removebg-preview.png";
+import menuHamburguer from "../../assets/menu.svg";
 import {
   House, 
   UserRoundPen, 
@@ -12,7 +12,7 @@ import {
 export function Header(){
   return(
     <HeaderContainer>
-      <img src={Logo} alt="logoPng"/>
+      <img src={menuHamburguer} alt="logoPng"/>
       <Nav>
         <span><a href="/Home"><House/></a></span>
         <span><a href="/sobremim"><UserRoundPen/></a></span>

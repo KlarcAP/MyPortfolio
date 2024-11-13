@@ -14,9 +14,9 @@ export const HeaderContainer = styled.header`
   z-index: 3;
 
   img{
-    width: 100px;
     cursor: pointer;
-    margin: 1rem;
+    margin: 2rem;
+    color: white;
   }
 
 `

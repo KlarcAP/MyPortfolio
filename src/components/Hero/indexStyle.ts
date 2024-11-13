@@ -8,17 +8,6 @@ export const HeroContainer = styled.section`
   align-items: center;
   justify-content:center;
   color: #fff;
-  
-
-
-  #background {
-    width: 100%;
-    height: 800px;
-    position: absolute;
-    z-index: 1;
-    top: -110px;
-    right: 10px;
-  }
 
 `;
 
@@ -27,7 +16,7 @@ export const IntroductionBox = styled.div`
   flex-direction: column;
   
   width: 30%;
-  padding: 5rem;
+  padding: 1rem;
   position: relative;
   z-index: 2;
 
@@ -45,23 +34,12 @@ export const IntroductionBox = styled.div`
     font-size: 1.2rem;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    white-space: wrap;
+    white-space: nowrap;
     overflow: hidden;
     font-weight: normal;
     
   }
 
-  .btn-veja-mais{
-    margin-top: 2rem;
-    margin-left: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    width: 130px;
-    height: 40px;
-    white-space: nowrap;
-    border-radius: 0.3rem;
-  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -87,8 +65,10 @@ export const Image = styled.div`
   display: flex;
 
   img {
+    position: relative;
     width: 500px; /* ou qualquer tamanho desejado */
-    height: 600px; /* ou qualquer tamanho desejado */
+    height: 500px; /* ou qualquer tamanho desejado */
+    left: 5rem;
     object-fit: cover;
     mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Para compatibilidade com WebKit */
@@ -108,5 +88,77 @@ export const Image = styled.div`
   }
 `;
 
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem; /* Espaço entre os botões */
+  flex-direction: row;
 
+  a {
+    display: inline-flex;
+    text-decoration: none;
+    position: relative;
+  }
 
+  button {
+    padding: 15px 40px;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    transition: all 0.2s;
+    background-color: #fff; /* Ajuste conforme a classe desejada */
+    color: #777;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 50px;
+      width: 100px;
+      border-radius: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+      background-color: #fff; /* Ajuste para a classe desejada */
+    }
+
+    &:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+
+    &.btn-animated {
+      animation: moveInBottom 5s ease-out;
+      animation-fill-mode: backwards;
+    }
+  }
+
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
