@@ -8,7 +8,7 @@ export function AnimatedRoutes(){
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
-                <Route path="/Home" element={<HeroSection />} />
+                <Route path="/" element={<HeroSection />} />
                 <Route path="/sobremim" element={<SobreMim />} />
             </Routes>
         </AnimatePresence>
