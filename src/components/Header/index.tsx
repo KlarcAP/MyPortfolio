@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; // Importando o Link
 import { HeaderContainer, Nav, Footer } from "./indexStyle";
 import menuHamburguer from "../../assets/menu.svg";
 import {
@@ -7,17 +8,18 @@ import {
   UserRoundSearch, 
   Instagram, 
   Linkedin, 
-  Mail } from 'lucide-react';
+  Mail 
+} from 'lucide-react';
 
-export function Header(){
-  return(
+export function Header() {
+  return (
     <HeaderContainer>
-      <img src={menuHamburguer} alt="logoPng"/>
+      <img src={menuHamburguer} alt="logoPng" />
       <Nav>
-        <span><a href="/"><House/></a></span>
-        <span><a href="/sobremim"><UserRoundPen/></a></span>
-        <span><a href="/"><CodeXml/></a></span>
-        <span><a href="/"><UserRoundSearch/></a></span>
+        <span><Link to="/"><House /></Link></span> {/* Alterado para <Link> */}
+        <span><Link to="/sobremim"><UserRoundPen /></Link></span> {/* Alterado para <Link> */}
+        <span><Link to="/"><CodeXml /></Link></span> {/* Alterado para <Link> */}
+        <span><Link to="/"><UserRoundSearch /></Link></span> {/* Alterado para <Link> */}
       </Nav>
       <Footer>
         <a href="https://www.instagram.com/klarc_almeida/"><Instagram /></a>
@@ -25,5 +27,5 @@ export function Header(){
         <a href="mailto:klarc@example.com"><Mail /></a>
       </Footer>
     </HeaderContainer>
-  )
+  );
 }

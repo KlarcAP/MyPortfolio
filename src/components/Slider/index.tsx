@@ -22,8 +22,8 @@ const items = [
 
 const Slider = () => {
   const quantity = items.length;
-  const width = 300; // Largura de cada item (pode ser adaptado)
-  const height = 200; // Altura de cada item (pode ser adaptado)
+  const width = 10; // Largura de cada item (pode ser adaptado)
+  const height = 150; // Altura de cada item (pode ser adaptado)
 
   return (
     <>

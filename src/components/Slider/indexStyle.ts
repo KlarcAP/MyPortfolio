@@ -25,6 +25,7 @@ export const StyledSlider = styled.div`
   height: var(--height);
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  position: relative;
 
   .list {
     display: flex;
@@ -43,7 +44,9 @@ export const StyledSlider = styled.div`
     animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
 
     img {
-      width: 100%;
+      width: 100px;
+      height: 150px;
+      object-fit: contain;
     }
   }
 

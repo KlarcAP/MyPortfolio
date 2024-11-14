@@ -1,14 +1,18 @@
 import { Header } from "./components/Header";
-import { AnimatedRoutes } from "./components/Routes/AnimatedRoutes";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { HeroSection } from "../src/components/Hero/index";
+import { SobreMim } from "../src/components/About/index";
 import { GlobalStyle } from "./style/global";
-import { BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (
     <>
       <Router>
         <Header />
-        <AnimatedRoutes/>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HeroSection />} />
+          <Route path="/sobremim" element={<SobreMim />} />
+        </Routes>
         <GlobalStyle />
       </Router>
     </>

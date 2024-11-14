@@ -22,7 +22,7 @@ export const AboutMe = styled.section`
 export const AboutMeContext = styled.div`
     width: 750px;
     height: 360px;
-    margin: auto 1rem;
+    margin: 1rem;
     border: 1px solid white;
     border-radius: 2rem;
     background-color: white transparent;

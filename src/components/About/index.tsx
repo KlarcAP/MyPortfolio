@@ -1,8 +1,9 @@
 import { AboutMe, AboutMeContext } from "./indexStyle";
-//import Slider from "../Slider/index";
+import Slider from "../Slider/index";
 export function SobreMim(){
     return(
         <>
+            <Slider/>
             <AboutMe>
                 <h2>Sobre Mim</h2>
                 <AboutMeContext>
