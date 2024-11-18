@@ -18,7 +18,7 @@ export function Header() {
       <Nav>
         <span><Link to="/"><House /></Link></span> {/* Alterado para <Link> */}
         <span><Link to="/sobremim"><UserRoundPen /></Link></span> {/* Alterado para <Link> */}
-        <span><Link to="/"><CodeXml /></Link></span> {/* Alterado para <Link> */}
+        <span><Link to="/projetos"><CodeXml /></Link></span> {/* Alterado para <Link> */}
         <span><Link to="/"><UserRoundSearch /></Link></span> {/* Alterado para <Link> */}
       </Nav>
       <Footer>
