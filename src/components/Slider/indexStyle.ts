@@ -25,7 +25,7 @@ export const StyledSlider = styled.div`
   height: var(--height);
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
-  position: relative;
+  position: fixed;
 
   .list {
     display: flex;
