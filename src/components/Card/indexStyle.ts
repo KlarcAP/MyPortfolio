@@ -30,6 +30,13 @@ export const Card = styled.div<{ position: Position }>`
   //opacity: ${({ position }) => (position === "center" ? 1 : 0.6)};
   z-index: ${({ position }) => (position === "center" ? 2 : 1)} !important;
   transition: all 0.3s ease;
+
+  img{
+    object-fit: contain;
+    width: 100%;
+    height: 100px;
+  }
+
 `;
 
 export const CarouselButton = styled.button`
@@ -45,4 +52,23 @@ export const CarouselButton = styled.button`
   &:hover {
     color: black;
   }
+`;
+
+export const Links = styled.div`
+
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  align-items: center;
+  text-align: center;
+
+  a{
+    background-color: purple;
+    text-decoration: none;
+    color: white;
+    width: 100px;
+    height: 25px;
+    border-radius: 1rem;
+  }
+
 `;

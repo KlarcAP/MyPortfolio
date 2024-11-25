@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CarouselContainer, Card, CarouselButton } from "./indexStyle";
+import { CarouselContainer, Card, CarouselButton, Links } from "./indexStyle";
 
 type Project = {
   name: string;
@@ -17,7 +17,7 @@ const Carousel: React.FC = () => {
   const data: Project[] = [
     {
       name: "Projeto 1",
-      image: "https://via.placeholder.com/300",
+      image: "https://th.bing.com/th/id/OIP.zSHsMjUpfvqiN_hcLT2G0AHaEK?rs=1&pid=ImgDetMain",
       description: "O BEConect é uma plataforma que integra estudantes do SENAI, proporcionando um ambiente online para troca de conhecimentos, contextualização dos cursos e orientação profissional. A solução conecta talentos e promove a colaboração em um espaço interativo e acessível.",
       siteLink: "https://projeto1.com",
       repoLink: "https://github.com/projeto1",
@@ -62,12 +62,12 @@ const Carousel: React.FC = () => {
 
       {data.map((project, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-<Card key={index} position={getPosition(index)}>
+        <Card key={index} position={getPosition(index)}>
           {/* Imagem do projeto */}
           <img
             src={project.image}
             alt={project.name}
-            style={{ width: "100px", borderRadius: "10px" }}
+            style={{ borderRadius: "10px" }}
           />
 
           {/* Informações do projeto */}
@@ -75,7 +75,8 @@ const Carousel: React.FC = () => {
           <p style={{color: "black", textAlign: "justify"}}>{project.description}</p>
 
           {/* Links do projeto */}
-          <div>
+          
+          <Links>
             <a href={project.siteLink} target="_blank" rel="noopener noreferrer">
               Ver Site
             </a>
@@ -83,17 +84,18 @@ const Carousel: React.FC = () => {
             <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
               Repositório
             </a>
-          </div>
 
-          {/* Ícones */}
-          <div>
-            {project.icons.map((icon, i) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-<span key={i} style={{ margin: "0 5px" }}>
-                {icon}
-              </span>
-            ))}
-          </div>
+            <div>
+              {project.icons.map((icon, i) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                <span key={i} style={{ margin: "0 5px" }}>
+                  {icon}
+                </span>
+              ))}
+            </div>
+
+          </Links>
+
         </Card>
       ))}
 
