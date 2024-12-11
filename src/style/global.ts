@@ -39,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: #131313;
         font-family: "Poppins"; 
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
     }
 
     body, input, textarea, button {

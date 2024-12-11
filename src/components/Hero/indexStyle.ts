@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 export const HeroContainer = styled.section`
   display: flex;
+  width: 100%; /* Evitar 100vw para evitar problemas de scrollbar */
   width: 100vw;
   height: 100vh;
   align-items: center;
+  overflow-x: hidden; /* Garantia adicional */
+  overflow-y: hidden; /* Garantia adicional */
   justify-content:center;
   color: #fff;
 
@@ -67,7 +70,8 @@ export const Image = styled.div`
   img {
     position: relative;
     width: 500px; /* ou qualquer tamanho desejado */
-    height: 500px; /* ou qualquer tamanho desejado */
+    max-width: 500px; /* Mantém a imagem proporcional */
+    height: auto; /* Evita deformação */
     left: 5rem;
     object-fit: cover;
     mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
