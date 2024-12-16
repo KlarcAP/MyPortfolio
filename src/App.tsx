@@ -1,24 +1,23 @@
 import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter} from "react-router-dom";
 import { HeroSection } from "../src/components/Hero/index";
 import { SobreMim } from "../src/components/About/index";
 import { GlobalStyle } from "./style/global";
-import { SectionProjects } from "./components/Projects";
+import { SectionProjects } from "./components/Projects/index";
+import { Tecnologias } from "./components/Tecnologias/index";
+import { ServicosSection } from "./components/Serviços/index"
 
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <GlobalStyle />
-        <Header />
-        <Routes >
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/sobremim" element={<SobreMim />} />
-          <Route path="/projetos" element={<SectionProjects />} />
-        </Routes>
-    </BrowserRouter>
+      <GlobalStyle />
+      <Header />
+      <HeroSection />
+      <ServicosSection />
+      <SobreMim />
+      <SectionProjects />
+      <Tecnologias />
     </>
   );
 }

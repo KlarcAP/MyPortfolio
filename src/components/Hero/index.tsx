@@ -26,9 +26,9 @@ export const HeroSection: React.FC = () => {
   return (
     <HeroContainer>
       <IntroductionBox>
-        <h2>Hi! I'm, </h2>
+        <h2>Olá! Eu sou, </h2>
         <h1>Klarc Almeida</h1>
-        <h2>UX/UI Designer and Front-End Developer👋</h2>
+        <h2>UX/UI Designer e Front-End Developer👋</h2>
         <ButtonBox>
           {socialLinks.map((link) => (
             <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
