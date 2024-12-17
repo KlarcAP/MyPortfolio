@@ -17,7 +17,7 @@ interface OrbitItem {
 const SolarSystem: React.FC = () => {
     const orbitsRef = useRef<HTMLDivElement[]>([]);
 
-    const tecnologias: OrbitItem = [
+    const tecnologias: OrbitItem[] = [
         { src: PHP, alt: "PHP" },
         { src: React, alt: "React" },
         { src: Javascript, alt: "Javascript" },
