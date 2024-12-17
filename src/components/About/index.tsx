@@ -1,12 +1,19 @@
 import { AboutMe, AboutMeContext } from "./indexStyle";
+import SolarSystem from "../SolarSystem/index";
 
 export function SobreMim(){
     return(
         <>
             <AboutMe>
-                <h2>Sobre Mim</h2>
+                
+                <SolarSystem />
                 <AboutMeContext>
-                    <p>Sou Desenvolvedor Frontend Freelancer com 7 meses de experiência, especializado na criação de sites personalizados para pequenas e médias empresas. Tenho proficiência em HTML, CSS, JavaScript, Node e React, que utilizo para desenvolver interfaces intuitivas e responsivas. Trabalho remotamente de Salvador, Bahia, colaborando de perto com os clientes para entender suas necessidades e transformá-las em soluções modernas que os ajudem a se destacar online. Sou apaixonado por entregar produtos de alta qualidade que superem as expectativas, e estou sempre em busca de aprimorar minhas habilidades para oferecer o melhor serviço possível.</p>
+                    <h3>Sobre mim</h3>
+                    <p>Desenvolvedor Frontend Freelancer com 1 ano de experiência, especializado no desenvolvimento de soluções digitais sob medida para pequenas e médias empresas. Atuo no planejamento, criação e entrega de websites profissionais e interfaces modernas, utilizando tecnologias como HTML, CSS, JavaScript, Node.js e React.</p>
+
+                    <p> Meu foco é criar experiências digitais intuitivas e responsivas que atendam às necessidades específicas de cada cliente. Baseado em Salvador, Bahia, trabalho de forma remota, mantendo uma comunicação próxima para garantir que cada projeto reflita a identidade e os objetivos de negócios dos meus clientes.</p>
+
+                    <p>Tenho um compromisso com a entrega de produtos de alta qualidade, com atenção aos detalhes e ênfase na funcionalidade e estética. Além disso, sou motivado pela constante evolução profissional, buscando sempre novas oportunidades de aprendizado para aprimorar minhas habilidades e superar as expectativas em cada projeto.</p>
                 </AboutMeContext>
             </AboutMe>
         </>

@@ -6,36 +6,37 @@ export const AboutMe = styled.section`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 6rem;
 
-    h2 {
-        font-size: 12rem;
-        font-weight: bold;
-        margin: 1rem 0 0 1rem;
-        color: 50% transparent;
-        z-index: 1;
-        position: absolute;
-    }
     
 `;
 
 export const AboutMeContext = styled.div`
     width: 750px;
-    height: 360px;
-    margin: 1rem;
+    height: auto;
+    padding: 2rem;
     border: 1px solid white;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background-color: white transparent;
     backdrop-filter: blur(10px);
-    z-index: 4;
+    z-index: 3;
+    
+    h3 {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: justify;
+        z-index: 1;
+
+    }
 
     p {
-        color: var(--text-title);
+        color: white;
         font-size: 1.2rem;
         line-height: 1.2;
-        text-align: center;
-        margin: 4rem 2rem 0 1rem;
-        color: #ffff;
+        text-align: justify;
+        margin: 1rem 2rem 0 1rem;
     }
     
     @media (max-width: 768px) {
