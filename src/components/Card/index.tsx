@@ -1,4 +1,6 @@
 import { Container, Card, Links } from "./indexStyle";
+import Beconect from '../../assets/beconnect.png';
+import Risoflow from '../../assets/Risoflow.png';
 
 type Project = {
   name: string;
@@ -13,7 +15,7 @@ const Carousel: React.FC = () => {
   const data: Project[] = [
     {
       name: "BeConect",
-      image: "src/assets/beconnect.png",
+      image: Beconect,
       description: "O BEConect é uma plataforma que integra estudantes do SENAI, proporcionando um ambiente online para troca de conhecimentos, contextualização dos cursos e orientação profissional.",
       siteLink: "https://projeto1.com",
       repoLink: "https://github.com/projeto1",
@@ -21,7 +23,7 @@ const Carousel: React.FC = () => {
     },
     {
       name: "RisoFlow",
-      image: "src/assets/risoflow.png",
+      image: Risoflow,
       description: "É uma plataforma que simplifica o gerenciamento de estoque, oferecendo controle eficiente de entradas e saídas, análise em tempo real e relatórios automatizados. Ideal para empresas que buscam otimizar processos, reduzir custos e melhorar a organização do fluxo de produtos.",
       siteLink: "https://projeto2.com",
       repoLink: "https://github.com/projeto2",
