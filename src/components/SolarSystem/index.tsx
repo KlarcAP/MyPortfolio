@@ -48,6 +48,7 @@ const SolarSystem: React.FC = () => {
             </Sun>
             {tecnologias.map((tech, index) =>(
                 <Orbit
+                    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                     key={index}
                     ref={(el) => {
                         if (el) orbitsRef.current[index] = el;

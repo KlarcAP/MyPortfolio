@@ -11,7 +11,7 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h2`
-    margin-bottom: 3rem;
+    margin-bottom: 0.15rem;
     font-weight: 400;
 `;
 
