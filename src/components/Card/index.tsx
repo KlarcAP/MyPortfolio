@@ -1,6 +1,6 @@
 import { Container, Card, Links } from "./indexStyle";
 import Beconect from '../../assets/beconnect.png';
-import Risoflow from '../../assets/Risoflow.png';
+import Risoflow from '../../assets/risoflow.png';
 
 type Project = {
   name: string;
