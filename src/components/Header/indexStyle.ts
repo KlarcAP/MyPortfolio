@@ -6,7 +6,7 @@ export const Container = styled.header<{ isScrolled: boolean}>`
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: fixed;
     z-index: 10;
     padding: 16px 32px;

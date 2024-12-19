@@ -5,6 +5,7 @@ import { SobreMim } from "../src/components/About/index";
 import { GlobalStyle } from "./style/global";
 import { SectionProjects } from "./components/Projects/index";
 import { ServicosSection } from "./components/Serviços/index";
+import { ContactMeForms } from "./components/Contact/index";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <ServicosSection />
       <SobreMim />
       <SectionProjects />
+      <ContactMeForms />
     </>
   );
 }
