@@ -1,13 +1,13 @@
 import { Container, Nav, Btn } from './indexStyle';
 import Logo from '../../assets/logo.svg';
 import { useEffect, useState } from 'react';
-import {debounce} from 'lodash';
-
+import { debounce } from 'lodash';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavItem = [
   { name: "Home", link: "/" },
   { name: "Serviços", link: "/servicos" },
-  { name: "Sobre", link: "/sobre" },
+  { name: "Sobre", link: "/sobre-mim" },
   { name: "Projetos", link: "/projetos" },
   { name: "Habilidades", link: "/habilidades" },
 ];
@@ -30,15 +30,23 @@ const Header: React.FC = () => {
 
   return (
     <Container isScrolled={isScrolled}>
-      <img src={Logo} alt="Logo do site" />
+      <Link to="/">
+        <img src={Logo} alt="Logo do site" />
+      </Link>
       <Nav>
         {NavItem.map((item) => (
-          <a key={item.name} href={item.link}>
+          <NavLink 
+            key={item.name} 
+            to={item.link} 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
             {item.name}
-          </a>
+          </NavLink>
         ))}
       </Nav>
-      <Btn type="button" aria-label="Entre em contato comigo">Contate me</Btn>
+      <Link to="/contato">
+        <Btn type="button" aria-label="Entre em contato comigo">Contate me</Btn>
+      </Link>
     </Container>
   );
 };
