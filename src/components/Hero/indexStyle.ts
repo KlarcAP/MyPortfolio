@@ -79,17 +79,6 @@ export const Image = styled.div`
     margin-bottom: 5rem;
   }
   
-  @media (max-width: 768px) {
-    img {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    img {
-      width: 100%;
-    }
-  }
 `;
 
 export const ButtonBox = styled.div`

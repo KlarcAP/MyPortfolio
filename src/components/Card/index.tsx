@@ -1,6 +1,7 @@
 import { Container, Card, Links } from "./indexStyle";
 import Beconect from '../../assets/beconnect.png';
 import Risoflow from '../../assets/risoflow.png';
+import Dtmoney from '../../assets/dtmoney.png';
 import { motion } from "framer-motion";
 
 type Project = {
@@ -49,9 +50,9 @@ const Carousel: React.FC = () => {
       icons: ["🚀", "💻"],
     },
     {
-      name: "Projeto 3",
-      image: "https://via.placeholder.com/300",
-      description: "Projeto 3 - Descrição",
+      name: "DTMoney",
+      image: Dtmoney,
+      description: "É uma plataforma intuitiva e eficiente para gestão de gastos e finanças pessoais, projetada para ajudar usuários a controlar suas finanças de maneira simples e organizada. Com recursos como acompanhamento de receitas e despesas, categorização de transações, relatórios financeiros detalhados e gráficos interativos",
       siteLink: undefined, // Simulando ausência de link
       repoLink: "https://github.com/projeto3",
       icons: ["🎨", "⚙️"],

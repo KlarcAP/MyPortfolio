@@ -9,6 +9,16 @@ export const Container = styled.div`
   width: 100%;
   padding: 20px; /* Espaço interno para evitar bordas coladas */
   overflow: hidden;
+
+  /* Ajusta para 2 colunas em telas médias */
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Ajusta para 1 coluna em telas pequenas */
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Card = styled.div`
@@ -58,7 +68,6 @@ export const Card = styled.div`
   }
 `;
 
-
 export const Links = styled.div`
   display: flex;
   flex-direction: row;
@@ -77,5 +86,12 @@ export const Links = styled.div`
     align-items: center;
     border-radius: 1rem;
     margin: 0 5px; /* Espaçamento entre os links */
+
+    /* Ajusta tamanho do botão em telas menores */
+    @media (max-width: 768px) {
+      width: 80px;
+      height: 20px;
+      font-size: 0.8rem;
+    }
   }
 `;
