@@ -1,9 +1,10 @@
 import { HeroContainer, IntroductionBox, Image, ButtonBox } from "./indexStyle";
-import ImagemHero from "../../assets/KlarcProfileHome.png";
+import ImagemHero from "../../assets/woman-brown-raincoat-sits-floor-with-laptop_882954-75570-removebg.png";
 import Github from "../../assets/github.png";
 import Instagram from "../../assets/instagram.png";
 import Linkedin from "../../assets/linkedin.png";
 import { motion } from "framer-motion";
+
 
 const socialLinks = [
   {
@@ -48,8 +49,8 @@ const imageVariants = {
 
 const buttonVariants = {
   hover: {
-    scale: 1.1,
-    transition: { yoyo: Number.POSITIVE_INFINITY, duration: 0.3 },
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   },
 };
 
@@ -62,12 +63,9 @@ export const HeroSection: React.FC = () => {
       animate="visible"
     >
       <IntroductionBox>
-        <motion.h2 variants={textVariants}>Olá! Eu sou,</motion.h2>
-        <motion.h1 variants={textVariants}>Klarc Almeida</motion.h1>
-        <motion.h2 variants={textVariants}>
-          UX/UI Designer e Front-End Developer👋
-        </motion.h2>
-        <ButtonBox>
+        <motion.h1 variants={textVariants}>Transformando ideias em experiências digitais impactantes.</motion.h1>
+        <motion.h3 variants={textVariants}>Desenvolvedor apaixonado por tecnologia, especialista em criar interfaces intuitivas e soluções inovadoras para a web. Meu foco é unir criatividade e funcionalidade para entregar projetos que realmente fazem a diferença. Explore meu portfólio e conheça o que posso fazer por você!</motion.h3>
+        <ButtonBox as={motion.div} variants={buttonVariants}>
           {socialLinks.map((link) => (
             <a
               key={link.name}
@@ -93,6 +91,7 @@ export const HeroSection: React.FC = () => {
       </IntroductionBox>
       <Image as={motion.div} variants={imageVariants}>
         <img src={ImagemHero} alt="Foto do Klarc Almeida" />
+        
       </Image>
     </HeroContainer>
   );

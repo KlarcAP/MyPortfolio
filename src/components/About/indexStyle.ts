@@ -13,19 +13,15 @@ export const AboutMe = styled.section`
 `;
 
 export const AboutMeContext = styled.div`
-    width: 750px;
+    width: 500px;
     height: auto;
     padding: 2rem;
-    border: 1px solid white;
-    border-radius: 1rem;
-    background-color: white transparent;
-    backdrop-filter: blur(10px);
     z-index: 3;
     
-    h3 {
+    h1 {
         color: white;
         font-size: 2rem;
-        font-weight: bold;
+        font-weight: 200;
         text-align: justify;
         z-index: 1;
 
@@ -33,10 +29,10 @@ export const AboutMeContext = styled.div`
 
     p {
         color: white;
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1.2;
         text-align: justify;
-        margin: 1rem 2rem 0 1rem;
+
     }
     
     @media (max-width: 768px) {
@@ -57,12 +53,56 @@ export const AboutMeContext = styled.div`
 
 `;
 
-export const AboutMePhoto = styled.div`
+export const MyPhoto = styled.div`
+  display: flex;
+  width: auto;
+  img {
+    position: relative;
+    width: 350px; /* ou qualquer tamanho desejado */
+    max-width: 500px; /* Mantém a imagem proporcional */
+    height: auto; /* Evita deformação */
+    object-fit: cover;
+    //mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    //-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Para compatibilidade com WebKit */
+    margin-bottom: 5rem;
+  }
+  
+`;
+
+export const TechIconsContainer = styled.div`
+    position: absolute;
+    width: 400px; /* Define o tamanho do círculo */
+    height: 500px;
+    border-radius: 50%;
     display: flex;
-    margin: auto;
-    img{
-        width: 400px;
-        height: 400px;
-        border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    /* Distribuição dos ícones ao redor do círculo */
+    svg {
+        position: absolute;
+        transform-origin: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+
+    svg:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(0deg) translate(180px) rotate(0deg);
+    }
+    svg:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(72deg) translate(230px) rotate(-72deg);
+    }
+    svg:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(144deg) translate(190px) rotate(-144deg);
+    }
+    svg:nth-child(4) {
+        transform: translate(-50%, -50%) rotate(216deg) translate(230px) rotate(-216deg);
+    }
+    svg:nth-child(5) {
+        transform: translate(-50%, -50%) rotate(288deg) translate(200px) rotate(-288deg);
     }
 `;

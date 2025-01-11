@@ -13,24 +13,9 @@ const InfoService = [
       "Desenvolvimento de aplicativos híbridos para Android e iOS, utilizando tecnologias modernas que garantem desempenho eficiente e interfaces intuitivas.",
   },
   {
-    title: "SEO e Performance",
-    description:
-      "Otimização de sites para motores de busca, melhorando a visibilidade online. Diagnóstico de performance e implementação de soluções para tempos de carregamento rápidos.",
-  },
-  {
-    title: "Consultoria Técnica",
-    description:
-      "Apoio em decisões estratégicas para projetos de software. Ajuda na escolha de tecnologias adequadas, arquitetura de sistemas e melhores práticas de desenvolvimento.",
-  },
-  {
     title: "Design UI/UX",
     description:
       "Criação de interfaces atraentes e funcionais, alinhadas à experiência do usuário. Ofereço protótipos interativos, identidade visual e design focado na usabilidade.",
-  },
-  {
-    title: "Teste e Qualidade (QA)",
-    description:
-      "Execução de testes manuais e automatizados para garantir que aplicações estejam livres de erros, além de oferecer relatórios detalhados sobre performance e bugs.",
   },
 ];
 
