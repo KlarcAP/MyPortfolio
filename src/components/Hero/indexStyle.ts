@@ -67,7 +67,8 @@ export const IntroductionBox = styled.div`
 
 export const Image = styled.div`
   display: flex;
-  background: radial-gradient(circle, rgb(108, 22, 199) 0%, rgba(13, 13, 13, 0.8) 70%);
+  background: radial-gradient(circle, rgb(108, 22, 199) 0%, rgba(13, 13, 13, 0.8) 65%);
+  width: auto;
   img {
     position: relative;
     width: 500px; /* ou qualquer tamanho desejado */

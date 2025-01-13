@@ -16,15 +16,13 @@ export const Title = styled.h2`
 `;
 
 export const Servico = styled.div`
-    width: 250px;
+    width: auto;
     display: flex;
     flex-direction: column;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    //background-color: #f9f9f9;
+    border: 0.5px solid #ffffff;
     padding: 16px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: justify;
 
     &:hover {
         transform: translateY(-4px);
@@ -33,12 +31,12 @@ export const Servico = styled.div`
 
     h3 {
         margin: 0.5rem 0;
-        color: black;
+        color: white;
     }
 
     p{
         margin: 0;
-        color: black
+        color: white;
     }
 `;
 
