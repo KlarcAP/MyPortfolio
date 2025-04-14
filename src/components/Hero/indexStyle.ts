@@ -1,129 +1,179 @@
-
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeroContainer = styled.section`
   display: flex;
-  width: 100%; /* Evitar 100vw para evitar problemas de scrollbar */
-  width: 100vw;
+  flex-direction: row;
   height: 100vh;
-  align-items: center;
-  overflow-x: hidden; /* Garantia adicional */
-  overflow-y: hidden; /* Garantia adicional */
-  justify-content:center;
-  color: #fff;
+  width: 100%;
+  overflow: hidden;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
+`;
+
+export const LeftSide = styled.div`
+  width: 30%;
+  background-color: #0f0f0f;
+  background-image: url("/background/tech-pattern.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 40%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2rem 0;
+  }
+`;
+
+export const RightSide = styled.div`
+  flex: 1;
+  width: 100%;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+`;
+
+export const Image = styled.div`
+  width: 300px;
+
+  @media (max-width: 1024px) {
+    width: 250px;
+  }
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: grayscale(100%);
+  }
 `;
 
 export const IntroductionBox = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: transparent;
-  width: 50%;
-  padding: 1rem;
-  position: relative;
-  z-index: 2;
+  align-items: flex-start;
+  padding: 10rem;
 
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    word-wrap: break-word;
-    
-    color: #fff; /* Mudei a cor para combinar com o fundo escuro */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    letter-spacing: -1px;
+  @media (max-width: 1024px) {
+    padding: 5rem;
   }
-
-  h3{
-    font-size: 1rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    margin-top: 1rem;
-    overflow: hidden;
-    word-wrap: break-word;
-    font-weight: normal;
-    
-  }
-
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    padding: 2rem;
     align-items: center;
     text-align: center;
-    padding: 2rem 0;
-  
-    h1 {
-      font-size: 6rem;
-    }
   }
 
-  @media (max-width: 480px) {
-    padding: 1rem;
-  
-    h1 {
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+
+    @media (max-width: 1024px) {
       font-size: 4rem;
     }
-  }
-`;
 
-export const Image = styled.div`
-  display: flex;
-  background: radial-gradient(circle, rgb(108, 22, 199) 0%, rgba(13, 13, 13, 0.8) 65%);
-  width: auto;
-  img {
-    position: relative;
-    width: 500px; /* ou qualquer tamanho desejado */
-    max-width: 500px; /* Mantém a imagem proporcional */
-    height: auto; /* Evita deformação */
-    object-fit: cover;
-    //mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    //-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Para compatibilidade com WebKit */
-    margin-bottom: 5rem;
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
   }
-  
+
+  h1:first-of-type {
+    color: var(--light-text);
+  }
+
+  h1:last-of-type {
+    color: var(--text-color);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 1rem;
+  }
 `;
 
 export const ButtonBox = styled.div`
-  display: flex;
   margin-top: 2rem;
-  gap: 1rem; /* Espaço entre os botões */
-  flex-direction: row;
+  display: flex;
+  gap: 1rem;
 
-  a {
-    display: inline-flex;
-    text-decoration: none;
-    position: relative;
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
   }
 
   button {
-    padding: 15px 40px;
-    width: 100px;
-    height: 50px;
-    border-radius: 50px;
-    transition: all 0.2s;
-    background-color: #fff; /* Ajuste conforme a classe desejada */
-    color: #777;
-    position: relative;
-    display: inline-block;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
+    background: transparent;
     border: none;
+    cursor: pointer;
 
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    img {
+      width: 32px;
+      height: 32px;
     }
   }
 
-  @keyframes moveInBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  button:first-of-type{
+    background-color: transparent;
+    border: 1px solid black;
+    color: var(--text-color);
+    font-size: 10px;
+    border-radius: 2rem;
+  }
+
+  button:last-of-type{
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 10px;
+    border-radius: 2rem;
   }
 `;
 
+export const SocialMedia = styled.div`
+
+  position: absolute;
+  width: auto;
+  bottom: 10px;       /* Distância do fundo */
+  right: 10px;        /* Distância da direita */
+  color: var(--text-color);
+  padding: 25px 10px;
+  text-align: center;
+  //justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  
+  a {
+    margin-left: 10px;
+    
+    img {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.2s;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+`

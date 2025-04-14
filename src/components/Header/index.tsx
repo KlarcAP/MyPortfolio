@@ -8,8 +8,9 @@ const NavItem = [
   { name: "Home", link: "/" },
   { name: "Sobre", link: "/sobre-mim" },
   { name: "Serviços", link: "/servicos" },
-  { name: "Projetos", link: "/projetos" },
+  { name: "Portfólio", link: "/projetos" },
   { name: "Habilidades", link: "/habilidades" },
+  { name: "Formação", link: "/formacao" },
 ];
 
 const Header: React.FC = () => {

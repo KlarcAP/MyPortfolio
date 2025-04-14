@@ -1,7 +1,12 @@
-import { AboutMe, AboutMeContext, MyPhoto, TechIconsContainer } from "./indexStyle";
-import MyPhotoAbout from "../../assets/minhaFoto.png";
+import { AboutMe, AboutMeContext, AboutMeTitle, ButtonBox, MyPhoto, TechIconsContainer } from "./indexStyle";
+import MyPhotoAbout from "../../assets/minhaFoto.jpeg";
 import { motion } from "framer-motion";
 import { FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
+
+const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+};
 
 export function SobreMim() {
     return (
@@ -13,14 +18,27 @@ export function SobreMim() {
                     transition={{ duration: 0.8 }}
                 >
                     <AboutMeContext>
-                        <h1>Olá! Eu sou Klarc Almeida</h1>
+                        <AboutMeTitle>
+                            <h2>SOBRE MIM</h2>
+                        </AboutMeTitle>
+                        
+                        <h1>Porque me contratar para o seu proximo projeto?</h1>
                         <br />
                         <p>
-                            Desenvolvedor Frontend Freelancer com 1 ano de experiência, especializado na criação de soluções digitais personalizadas para pequenas e médias empresas. Planejo, desenvolvo e entrego websites profissionais e interfaces modernas, utilizando HTML, CSS, JavaScript, Node.js e React.
+                            Sou Desenvolvedor Front-end e Designer UI/UX, com experiência em criar interfaces digitais funcionais e visualmente atraentes. Minha paixão é transformar desafios complexos em soluções simples, intuitivas e bem estruturadas, aliando código limpo a designs impactantes.
                             <br />
                             <br />
-                            Com foco em experiências intuitivas e responsivas, mantenho uma comunicação próxima para garantir que cada projeto reflita a identidade e os objetivos do cliente. Comprometido com alta qualidade, valorizo a funcionalidade, estética e atenção aos detalhes, sempre buscando aprimorar minhas habilidades e superar expectativas.
+                            Meu trabalho vai além do desenvolvimento: é sobre entregar produtos que não apenas funcionam perfeitamente, mas também cativam e envolvem quem os usa. Com um toque pessoal e atenção aos detalhes, garanto que seu projeto seja tanto eficaz quanto único.
                         </p>
+                        <ButtonBox as={motion.div} variants={textVariants}>
+                            <motion.button
+                            type="button"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            >
+                            VER PORTFÓLIO
+                            </motion.button>
+                        </ButtonBox>           
                     </AboutMeContext>
                 </motion.div>
                 <motion.div 

@@ -10,41 +10,74 @@ export const Container = styled.section`
     justify-content: center;
 `;
 
-export const Title = styled.h2`
-    margin-bottom: 0.15rem;
-    font-weight: 400;
+export const Title = styled.div`
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;     
+
+    width: 190px;
+    height: 40px;
+    border-radius: 5rem;
+    background-color: #F1EDFF;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 100;
 `;
 
 export const Servico = styled.div`
-    width: auto;
+    width: 280px;
+    height: 370px;
+    box-shadow: 2rem 1rem;
+    border-radius: 9px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    //background-color: #f9f9f9;
-    border: 0.5px solid #ffffff;
     padding: 16px;
-    text-align: justify;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 
     &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        
+        
     }
-
+    span {
+        color: var(--primary-color);
+        font-size: 40px;
+        font-weight: 900;
+    }
     h3 {
         margin: 0.5rem 0;
-        color: white;
+        color: var(--text-color);
     }
 
     p{
         margin: 0;
-        color: white;
+        font-size: 14px;
+        color: var(--light-text);
+        padding-bottom: 26px;
     }
 `;
 
 export const Servicos = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 2 colunas de tamanho igual */
-    gap: 16px; /* Espaço entre os itens */
+    gap: 2rem; /* Espaço entre os itens */
     padding: 20px;
 
 `;
 
+export const ButtonView = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 10px;
+    border-radius: 2rem;
+`;

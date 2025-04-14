@@ -12,7 +12,7 @@ export const Container = styled.header<{ isScrolled: boolean}>`
     padding: 16px 32px;
     transition: background-color 0.3s ease-in-out;
     background-color: ${({ isScrolled }) => (isScrolled ? "#333" : "transparent")}; /* Cor muda com o scroll */
-    color: ${({ isScrolled }) => (isScrolled ? "#fff" : "#000")}; /* Texto ajusta para contraste */
+    color: var(--light-text);
     box-shadow: ${({ isScrolled }) => (isScrolled ? "0 2px 8px rgba(0, 0, 0, 0.1)" : "none")};
 
     img{
@@ -30,24 +30,22 @@ export const Nav = styled.nav`
 
 
     a{
-        color: #ffffff;
+        color: var(--light-text);
+        font-size: 16px;
+        font-weight: 200;
         cursor: pointer;
 
         &:hover {
-            color: #ffffff blur;
+            color: var(--light-text) blur;
             text-decoration: underline;
         }
     }
 `;
 
 export const Btn = styled.button`
-
     padding: 10px 20px;
     border-radius: 1rem;
-    background-color: #ffffff;
-    color: #333;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
 `;

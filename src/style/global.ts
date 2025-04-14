@@ -2,12 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --blackPrimary: #0D0D0D; /* Preto Profundo - Fundo principal */
-    --grayDark: #1A1A1A; /* Cinza Escuro - Elementos secundários */
-    --lilacSoft: #9F86C0; /* Lilás Suave - Textos/detalhes */
-    --purpleNeon:rgb(108, 22, 199); /* Púrpura Neon - Destaques */
-    --pinkNeon: rgb(108, 22, 199); /* Rosa Neon - Hover e Detalhes */
-    --whiteSoft: #EAEAEA; /* Branco Suave - Contraste */
+    --primary-color: #8f45f1;     /* Roxo vibrante usado nos botões e formas */
+    --text-color: #000000;        /* Texto principal preto */
+    --light-text: #888888;        /* Texto de apoio em cinza claro */
+    --background-dark: #1a1a1a;   /* Fundo preto usado na lateral esquerda */
+    --background-light: #f9f9f9;  /* Fundo geral da direita */
+    --white: #ffffff;
   }
 
   * {
@@ -31,7 +31,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: var(--blackPrimary);
     color: var(--whiteSoft);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -55,13 +54,11 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  a:hover {
-    color: var(--pinkNeon);
-  }
+ 
 
   button {
-    background-color: var(--purpleNeon);
-    color: var(--blackPrimary);
+    background-color: var(--primary-color);
+    //color: var(--white);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -69,9 +66,6 @@ export const GlobalStyle = createGlobalStyle`
     transition: background-color 0.3s;
   }
 
-  button:hover {
-    background-color: var(--pinkNeon);
-  }
 
   [disabled] {
     opacity: 0.6;

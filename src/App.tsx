@@ -7,6 +7,8 @@ import { SectionProjects } from "./components/Projects/index";
 import { ServicosSection } from "./components/Serviços/index";
 import { ContactMeForms } from "./components/Contact/index";
 import ScrollToTop from './components/scrollToTop';
+import { FormationTimeline } from './components/Formação';
+import SkillChart from './components/Habilidades';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/servicos" element={<ServicosSection />} />
           <Route path="/sobre-mim" element={<SobreMim />} />
           <Route path="/projetos" element={<SectionProjects />} />
+          <Route path="/formacao" element={<FormationTimeline />} />
+          <Route path="/habilidades" element={<SkillChart />} />
           <Route path="/contato" element={<ContactMeForms />} />
         </Routes>
       </Router>

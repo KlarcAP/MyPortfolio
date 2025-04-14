@@ -1,35 +1,40 @@
-import { HeroContainer, IntroductionBox, Image, ButtonBox } from "./indexStyle";
-import ImagemHero from "../../assets/woman-brown-raincoat-sits-floor-with-laptop_882954-75570-removebg.png";
+import {
+  HeroContainer,
+  IntroductionBox,
+  Image,
+  ButtonBox,
+  LeftSide,
+  RightSide,
+  SocialMedia,
+} from "./indexStyle";
+import ImagemHero from "../../assets/minhaFoto.jpeg";
 import Github from "../../assets/github.png";
 import Instagram from "../../assets/instagram.png";
 import Linkedin from "../../assets/linkedin.png";
 import { motion } from "framer-motion";
 
-
 const socialLinks = [
   {
-    name: 'Github',
-    url: 'https://github.com/KlarcAP',
+    name: "Github",
+    url: "https://github.com/KlarcAP",
     icon: Github,
   },
   {
     name: "Linkedin",
-    url: 'https://www.linkedin.com/in/klarc-almeida-908774162',
+    url: "https://www.linkedin.com/in/klarc-almeida-908774162",
     icon: Linkedin,
   },
   {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/klarc_almeida/',
+    name: "Instagram",
+    url: "https://www.instagram.com/klarc_almeida/",
     icon: Instagram,
-  }
+  },
 ];
-
-// Variantes de animação
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { 
+    transition: {
       duration: 1,
       when: "beforeChildren",
       staggerChildren: 0.3,
@@ -47,14 +52,26 @@ const imageVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 1 } },
 };
 
-const buttonVariants = {
-  hover: {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  },
-};
-
 export const HeroSection: React.FC = () => {
+  const handleDownload = () => {
+    // Cria um link temporário
+    const link = document.createElement('a');
+    link.href = '/curriculo.pdf'; // Caminho do seu PDF na pasta public
+    link.download = 'Klarc-Almeida-Curriculo.pdf'; // Nome do arquivo para download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleViewPortfolio = () => {
+    const link = document.createElement('a');
+    link.href = '/projetos'; // Caminho do seu PDF na pasta public
+    //link.download = 'Klarc-Almeida-Curriculo.pdf'; // Nome do arquivo para download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <HeroContainer
       as={motion.div}
@@ -62,37 +79,71 @@ export const HeroSection: React.FC = () => {
       initial="hidden"
       animate="visible"
     >
-      <IntroductionBox>
-        <motion.h1 variants={textVariants}>Transformando ideias em experiências digitais impactantes.</motion.h1>
-        <motion.h3 variants={textVariants}>Desenvolvedor apaixonado por tecnologia, especialista em criar interfaces intuitivas e soluções inovadoras para a web. Meu foco é unir criatividade e funcionalidade para entregar projetos que realmente fazem a diferença. Explore meu portfólio e conheça o que posso fazer por você!</motion.h3>
-        <ButtonBox as={motion.div} variants={buttonVariants}>
+      <LeftSide>
+        <Image as={motion.div} variants={imageVariants}>
+          <img
+            src={ImagemHero}
+            alt="Foto do Klarc Almeida"
+            style={{
+              height: 'auto',
+              width: '400px',
+              maxWidth: '600px',
+              maskImage: 'url(/triangle-mask.svg)',
+              WebkitMaskImage: 'url(/triangle-mask.svg)',
+              maskSize: 'cover',
+              WebkitMaskSize: 'cover',
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+              maskPosition: 'center',
+              WebkitMaskPosition: 'center',
+            }}
+          />
+        </Image>
+      </LeftSide>
+
+      <RightSide>
+        <IntroductionBox>
+          <motion.h1 variants={textVariants}>Olá, Eu sou Klarc</motion.h1>
+          <motion.h1 variants={textVariants}>Web Developer</motion.h1>
+
+          <ButtonBox as={motion.div} variants={textVariants}>
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleDownload}
+                >
+                  DOWNLOAD CV
+                </motion.button>
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleViewPortfolio}
+                >
+                  VER PORTFÓLIO
+                </motion.button>
+          </ButtonBox>
+        </IntroductionBox>
+        <SocialMedia>
+          FOLLOW ME ON : 
           {socialLinks.map((link) => (
             <a
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={link.name}
             >
-              <motion.button
-                type="button"
-                className="btn-animated"
-                variants={buttonVariants}
-                whileHover="hover"
-              >
-                <img
-                  src={link.icon}
-                  alt={`${link.name} icon`}
-                  style={{ width: "24px", marginRight: "8px" }}
-                />
-              </motion.button>
+              <img 
+                src={link.icon} 
+                alt={link.name} 
+                style={{ width: "24px", height: "24px", marginLeft: "10px" }} 
+              />
             </a>
           ))}
-        </ButtonBox>
-      </IntroductionBox>
-      <Image as={motion.div} variants={imageVariants}>
-        <img src={ImagemHero} alt="Foto do Klarc Almeida" />
-        
-      </Image>
+        </SocialMedia>
+      </RightSide>
     </HeroContainer>
   );
 };

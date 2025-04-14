@@ -1,6 +1,7 @@
-import { Container, Servico, Servicos, Title } from "./indexStyle";
+import { ButtonView, Container, Servico, Servicos, Title } from "./indexStyle";
 import { motion } from "framer-motion";
 import { FaMobileAlt, FaLaptopCode, FaPaintBrush } from "react-icons/fa";
+//import Particles from "./"
 
 const InfoService = [
   {
@@ -27,7 +28,7 @@ export function ServicosSection() {
   return (
     <Container>
       <Title>
-        Serviços que eu ofereço:
+        MEUS SERVIÇOS
       </Title>
       <Servicos>
         {InfoService.map((info, index) => (
@@ -42,8 +43,11 @@ export function ServicosSection() {
             }}
           >
             <Servico>
-              <h3>{info.title} {info.icon}</h3>
+              <h1> {info.icon}</h1>
+              <span>_</span>
+              <h3>{info.title}</h3>
               <p>{info.description}</p>
+              <ButtonView>SAIBA MAIS...</ButtonView>
             </Servico>
           </motion.div>
         ))}

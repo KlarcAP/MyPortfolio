@@ -6,20 +6,39 @@ export const AboutMe = styled.section`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 6rem;
 
     
 `;
+
+export const AboutMeTitle = styled.div`
+    width: 130px;
+    //height: 50px;
+    margin-bottom: 1rem;
+    border-radius: 5rem;
+    text-align: center;
+    align-items: center;
+    //justify-content: center;
+    //padding: 2rem;
+    z-index: 3;
+    background-color: #F1EDFF;
+
+    h2{
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: 100;
+    }
+`
 
 export const AboutMeContext = styled.div`
     width: 500px;
     height: auto;
     padding: 2rem;
     z-index: 3;
-    
-    h1 {
-        color: white;
+
+    h1{
+        color: var(--text-color);
         font-size: 2rem;
         font-weight: 200;
         text-align: justify;
@@ -28,8 +47,8 @@ export const AboutMeContext = styled.div`
     }
 
     p {
-        color: white;
-        font-size: 1rem;
+        color: var(--text-color);
+        font-size: 14px;
         line-height: 1.2;
         text-align: justify;
 
@@ -64,7 +83,6 @@ export const MyPhoto = styled.div`
     object-fit: cover;
     //mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     //-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Para compatibilidade com WebKit */
-    margin-bottom: 5rem;
   }
   
 `;
@@ -79,7 +97,6 @@ export const TechIconsContainer = styled.div`
     align-items: center;
     z-index: 1;
 
-    /* Distribuição dos ícones ao redor do círculo */
     svg {
         position: absolute;
         transform-origin: center;
@@ -94,7 +111,7 @@ export const TechIconsContainer = styled.div`
         transform: translate(-50%, -50%) rotate(0deg) translate(180px) rotate(0deg);
     }
     svg:nth-child(2) {
-        transform: translate(-50%, -50%) rotate(72deg) translate(230px) rotate(-72deg);
+        transform: translate(-50%, -50%) rotate(72deg) translate(150px) rotate(-72deg);
     }
     svg:nth-child(3) {
         transform: translate(-50%, -50%) rotate(144deg) translate(190px) rotate(-144deg);
@@ -103,6 +120,28 @@ export const TechIconsContainer = styled.div`
         transform: translate(-50%, -50%) rotate(216deg) translate(230px) rotate(-216deg);
     }
     svg:nth-child(5) {
-        transform: translate(-50%, -50%) rotate(288deg) translate(200px) rotate(-288deg);
+        transform: translate(-50%, -50%) rotate(288deg) translate(240px) rotate(-288deg);
     }
+`;
+
+export const ButtonBox = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 10px;
+    border-radius: 2rem;
+  }
+
 `;
