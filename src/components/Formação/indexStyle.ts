@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+interface TimelineItemProps {
+  index: number;
+  middleItem: boolean;
+}
+
+interface TimelineBoxProps {
+  index: number;
+  middleItem: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -24,7 +34,7 @@ export const Container = styled.div`
   }
 `;
 
-export const TimelineItem = styled.div`
+export const TimelineItem = styled.div<TimelineItemProps>`
   width: 50%;
   display: flex;
   justify-content: ${props => 
@@ -33,7 +43,7 @@ export const TimelineItem = styled.div`
   padding: 20px 0;
 `;
 
-export const TimelineBox = styled.div`
+export const TimelineBox = styled.div<TimelineBoxProps>`
   width: calc(50% - 60px);
   position: relative;
   
