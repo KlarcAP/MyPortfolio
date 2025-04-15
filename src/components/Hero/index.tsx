@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
   const handleDownload = () => {
     // Cria um link temporário
     const link = document.createElement('a');
-    link.href = '/curriculo.pdf'; // Caminho do seu PDF na pasta public
+    link.href = './assets/curriculo.pdf'; // Caminho do seu PDF na pasta public
     link.download = 'Klarc-Almeida-Curriculo.pdf'; // Nome do arquivo para download
     document.body.appendChild(link);
     link.click();
@@ -103,8 +103,8 @@ export const HeroSection: React.FC = () => {
 
       <RightSide>
         <IntroductionBox>
-          <motion.h1 variants={textVariants}>Olá, Eu sou Klarc</motion.h1>
-          <motion.h1 variants={textVariants}>Web Developer</motion.h1>
+          <motion.h1 variants={textVariants}>Olá, Sou Klarc Almeida</motion.h1>
+          <motion.h1 variants={textVariants}>Desenvolvedor Web</motion.h1>
 
           <ButtonBox as={motion.div} variants={textVariants}>
                 <motion.button

@@ -43,6 +43,7 @@ export const Nav = styled.nav`
 `;
 
 export const Btn = styled.button`
+    color: var(--white);
     padding: 10px 20px;
     border-radius: 1rem;
     border: none;

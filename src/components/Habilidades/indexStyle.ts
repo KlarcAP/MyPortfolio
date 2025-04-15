@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+//import {motion} from 'framer-motion';
 
-interface ProgressFillProps {
-  percentage: number;
-}
+
 
 export const SkillContainer = styled.div`
   display: flex;
@@ -84,10 +83,9 @@ export const ProgressBar = styled.div`
   overflow: hidden;
 `;
 
-export const ProgressFill = styled.div<ProgressFillProps>`
+export const ProgressFill = styled.div<{ percentage: number }>`
   height: 100%;
   width: ${props => props.percentage}%;
   background-color: var(--primary-color);
   border-radius: 5px;
-  transition: width 0.5s ease-in-out;
 `;

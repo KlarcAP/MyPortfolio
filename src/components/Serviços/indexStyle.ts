@@ -38,10 +38,24 @@ export const Servico = styled.div`
     text-align: center;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 
-    &:hover {
-        
-        
-    }
+    /**&:hover {
+        background-color: var(--primary-color);
+
+        h1 {
+            color: var(--white);
+        }
+
+        span {
+            color: var(--white);
+        }
+        h3 {
+            color: var(--white);
+        }
+
+        p{
+            color: var(--white);
+        }
+    } */
     span {
         color: var(--primary-color);
         font-size: 40px;
@@ -80,4 +94,8 @@ export const ButtonView = styled.div`
     color: var(--white);
     font-size: 10px;
     border-radius: 2rem;
+
+    &:hover{
+        scale: 12px;
+    }
 `;
