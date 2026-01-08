@@ -1,13 +1,10 @@
 import {
   HeroContainer,
   IntroductionBox,
-  Image,
   ButtonBox,
-  LeftSide,
   RightSide,
   SocialMedia,
 } from "./indexStyle";
-import ImagemHero from "../../assets/minhaFoto.jpeg";
 import Github from "../../assets/github.png";
 import Instagram from "../../assets/instagram.png";
 import Linkedin from "../../assets/linkedin.png";
@@ -45,11 +42,6 @@ const containerVariants = {
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
 };
 
 export const HeroSection: React.FC = () => {
