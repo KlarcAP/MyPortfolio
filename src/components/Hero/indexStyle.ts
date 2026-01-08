@@ -36,7 +36,7 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
   flex: 1;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: var(--background-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@ export const Image = styled.div`
 export const IntroductionBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  
   padding: 10rem;
 
   @media (max-width: 1024px) {
@@ -115,6 +115,7 @@ export const ButtonBox = styled.div`
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
+  justify-content: center;
 
   @media (max-width: 768px) {
     justify-content: center;
@@ -134,7 +135,7 @@ export const ButtonBox = styled.div`
 
   button:first-of-type{
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid white;
     color: var(--text-color);
     font-size: 10px;
     border-radius: 2rem;

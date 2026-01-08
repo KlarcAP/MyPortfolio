@@ -59,13 +59,13 @@ export const SkillItemContainer = styled.div`
 export const Percentage = styled.div`
   font-size: 24px;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
   margin-bottom: 5px;
 `;
 
 export const SkillName = styled.h3`
   font-size: 18px;
-  color: #34495e;
+  color: white;
   margin-bottom: 10px;
 `;
 

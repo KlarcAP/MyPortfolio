@@ -30,7 +30,7 @@ export const Nav = styled.nav`
 
 
     a{
-        color: var(--light-text);
+        color: white;
         font-size: 16px;
         font-weight: 200;
         cursor: pointer;

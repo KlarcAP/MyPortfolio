@@ -11,10 +11,10 @@ export function FormationTimeline() {
     {
       title: "Análise e Desenvolvimento de Sistemas",
       period: "2025 - Presente",
-      description: "Atualmente cursando Tecnólogo em Análise e Desenvolvimento de Sistemas na UCSAL, com foco em desenvolvimento full-stack (JavaScript, React, Node.js), arquitetura de software, DevOps e tecnologias emergentes como IA e cloud computing, complementando a formação com participação em projetos práticos e eventos tecnológicos para aplicação real dos conhecimentos adquiridos."
+      description: "Atualmente cursando Tecnólogo em Análise e Desenvolvimento de Sistemas no Instituto Federal de Ciência e Tecnologia da Bahia (IFBA), com foco em desenvolvimento full-stack (JavaScript, React, Node.js), arquitetura de software, DevOps e tecnologias emergentes como IA e cloud computing, complementando a formação com participação em projetos práticos e eventos tecnológicos para aplicação real dos conhecimentos adquiridos."
     },
     {
-      title: "Técnico de Desenvolvimento de Sistemas",
+      title: "Técnico em Desenvolvimento de Sistemas",
       period: "2023 - 2024",
       description: "Cursei Técnico em Desenvolvimento de Sistemas no SENAI, onde adquiri habilidades práticas em programação (Java, JavaScript, Python), banco de dados (MySQL), desenvolvimento web (HTML/CSS, React) e metodologias ágeis (Scrum). Participei ativamente de projetos integradores, como o desenvolvimento de um Sistema de Integração de Turmas chamado de BeConect, aplicando conceitos de engenharia de software e versionamento (Git). A formação, aliando teoria à prática em laboratórios equipados, preparou-me para desafios reais do mercado de TI e consolidou minha paixão pela área."
     },

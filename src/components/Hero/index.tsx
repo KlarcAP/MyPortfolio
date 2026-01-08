@@ -79,28 +79,7 @@ export const HeroSection: React.FC = () => {
       initial="hidden"
       animate="visible"
     >
-      <LeftSide>
-        <Image as={motion.div} variants={imageVariants}>
-          <img
-            src={ImagemHero}
-            alt="Foto do Klarc Almeida"
-            style={{
-              height: 'auto',
-              width: '400px',
-              maxWidth: '600px',
-              maskImage: 'url(/triangle-mask.svg)',
-              WebkitMaskImage: 'url(/triangle-mask.svg)',
-              maskSize: 'cover',
-              WebkitMaskSize: 'cover',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-              maskPosition: 'center',
-              WebkitMaskPosition: 'center',
-            }}
-          />
-        </Image>
-      </LeftSide>
-
+      
       <RightSide>
         <IntroductionBox>
           <motion.h1 variants={textVariants}>Olá, Sou Klarc Almeida</motion.h1>

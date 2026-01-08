@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   :root {
     --primary-color: #8f45f1;     /* Roxo vibrante usado nos botões e formas */
-    --text-color: #000000;        /* Texto principal preto */
+    --text-color: #ffffff;        /* Texto principal preto */
     --light-text: #888888;        /* Texto de apoio em cinza claro */
     --background-dark: #1a1a1a;   /* Fundo preto usado na lateral esquerda */
     --background-light: #f9f9f9;  /* Fundo geral da direita */

@@ -8,7 +8,7 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   padding: 10rem;
 
   h2{
@@ -24,7 +24,6 @@ export const Title = styled.div`
   width: 190px;
   height: 40px;
   border-radius: 5rem;
-  background-color: #F1EDFF;
   color: var(--primary-color);
   font-size: 16px;
   font-weight: 100;
@@ -37,7 +36,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(2, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-  background-color: #f5f5f5;
+  
 `;
 
 export const GridItem = styled.div`
@@ -56,6 +55,7 @@ export const GridItem = styled.div`
     object-fit: cover; /* Faz a imagem preencher o card */
     transition: transform 0.3s ease;
   }
+    
   &:nth-child(1) {
     display: flex;
     grid-column: span 2; // Item "HIKING" ocupa 2 colunas

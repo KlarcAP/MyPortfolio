@@ -4,7 +4,6 @@ import { HeroSection } from "../src/components/Hero/index";
 import { SobreMim } from "../src/components/About/index";
 import { GlobalStyle } from "./style/global";
 import { SectionProjects } from "./components/Projects/index";
-import { ServicosSection } from "./components/Serviços/index";
 import { ContactMeForms } from "./components/Contact/index";
 import ScrollToTop from './components/scrollToTop';
 import { FormationTimeline } from './components/Formação';
@@ -19,7 +18,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HeroSection />} />
-          <Route path="/servicos" element={<ServicosSection />} />
           <Route path="/sobre-mim" element={<SobreMim />} />
           <Route path="/projetos" element={<SectionProjects />} />
           <Route path="/formacao" element={<FormationTimeline />} />

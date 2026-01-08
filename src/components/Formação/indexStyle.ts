@@ -19,7 +19,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background: #f9f9f9;
+  background: var(--background-dark);
 
   &::after {
     content: '';
@@ -35,31 +35,18 @@ export const Container = styled.div`
 `;
 
 export const TimelineItem = styled.div<TimelineItemProps>`
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: ${props => 
     props.middleItem ? 'flex-end' : 
     props.index % 2 === 0 ? 'flex-start' : 'flex-end'};
-  padding: 20px 0;
+  padding: 2rem;
 `;
 
 export const TimelineBox = styled.div<TimelineBoxProps>`
   width: calc(50% - 60px);
   position: relative;
   
-  &::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    ${props => 
-      props.middleItem ? 'left: -40px;' :
-      props.index % 2 === 0 ? 'left: -40px;' : 'right: -40px;'}
-  }
 `;
 
 export const TextBox = styled.div`
@@ -84,5 +71,6 @@ export const TextBox = styled.div`
   p {
     margin: 0;
     line-height: 1.5;
+    color: black;
   }
 `;
