@@ -1,53 +1,48 @@
-import { Container, Nav, Btn } from './indexStyle';
-import Logo from '../../assets/logo.svg';
-import { useEffect, useState } from 'react';
-import { debounce } from 'lodash';
-import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 const NavItem = [
-  { name: "Home", link: "/" },
-  { name: "Sobre", link: "/sobre-mim" },
-  { name: "Portfólio", link: "/projetos" },
-  { name: "Habilidades", link: "/habilidades" },
-  { name: "Formação", link: "/formacao" },
+  { name: "Home", link: "#home" },
+  { name: "Sobre", link: "#about" },
+  { name: "Portfólio", link: "#projects" },
+  { name: "Habilidades", link: "#skills" },
+  { name: "Formação", link: "#education" },
 ];
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > window.innerHeight * 0.5);
-    }, 100);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 80);
+    };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <Container isScrolled={isScrolled}>
-      <Link to="/">
-        <img src={Logo} alt="Logo do site" />
-      </Link>
-      <Nav>
+    <header className="fixed top-6 left-0 w-full h-12 z-50 flex justify-center">
+
+      <nav
+        className={`flex w-6xl justify-center items-center gap-8 px-8 py-3 rounded-full border transition-all duration-300 ${
+          isScrolled
+            ? "bg-black/70 backdrop-blur-md shadow-lg border-gray-200"
+            : "bg-black/40 backdrop-blur border-white/30"
+        }`}
+      >
         {NavItem.map((item) => (
-          <NavLink 
-            key={item.name} 
-            to={item.link} 
-            className={({ isActive }) => (isActive ? 'active' : '')}
+          <a
+            key={item.name}
+            href={item.link}
+            className="text-lg font-medium text-gray-300 hover:text-"
           >
             {item.name}
-          </NavLink>
+          </a>
         ))}
-      </Nav>
-      <Link to="/contato">
-        <Btn type="button" aria-label="Entre em contato comigo">Contate me</Btn>
-      </Link>
-    </Container>
+      </nav>
+
+    </header>
   );
 };
 
