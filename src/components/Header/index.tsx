@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const NavItem = [
@@ -22,7 +23,12 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed top-6 left-0 w-full h-12 z-50 flex justify-center">
+    <motion.header 
+      className="fixed top-6 left-0 w-full h-12 z-50 flex justify-center"
+      initial={{ opacity: 0, x: 80 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.5 }}  
+    >
 
       <nav
         className={`flex w-6xl justify-center items-center gap-8 px-8 py-3 rounded-full border transition-all duration-300 ${
@@ -42,7 +48,7 @@ const Header: React.FC = () => {
         ))}
       </nav>
 
-    </header>
+    </motion.header>
   );
 };
 

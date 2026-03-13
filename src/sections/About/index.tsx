@@ -1,63 +1,85 @@
-import { AboutMe, AboutMeContext, AboutMeTitle, ButtonBox, MyPhoto, TechIconsContainer } from "./indexStyle";
 import MyPhotoAbout from "../../assets/minhaFoto.jpeg";
 import { motion } from "framer-motion";
 import { FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
 
-const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
-export function SobreMim() {
-    return (
-        <>
-            <AboutMe>
-                <motion.div 
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <AboutMeContext>
-                        <AboutMeTitle>
-                            <h2>SOBRE MIM</h2>
-                        </AboutMeTitle>
-                        
-                        <h1>Porque me contratar para o seu proximo projeto?</h1>
-                        <br />
-                        <p>
-                            Sou Desenvolvedor Front-end e Designer UI/UX, com experiência em criar interfaces digitais funcionais e visualmente atraentes. Minha paixão é transformar desafios complexos em soluções simples, intuitivas e bem estruturadas, aliando código limpo a designs impactantes.
-                            <br />
-                            <br />
-                            Meu trabalho vai além do desenvolvimento: é sobre entregar produtos que não apenas funcionam perfeitamente, mas também cativam e envolvem quem os usa. Com um toque pessoal e atenção aos detalhes, garanto que seu projeto seja tanto eficaz quanto único.
-                        </p>
-                        <ButtonBox as={motion.div} variants={textVariants}>
-                            <motion.button
-                            type="button"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            >
-                            VER PORTFÓLIO
-                            </motion.button>
-                        </ButtonBox>           
-                    </AboutMeContext>
-                </motion.div>
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <MyPhoto>
-                        <img src={MyPhotoAbout} alt="Foto do Klarc Almeida" />
-                        <TechIconsContainer>
-                            <FaReact color="#61DBFB" size={50} />
-                            <FaNodeJs color="#68A063" size={60} />
-                            <FaHtml5 color="#E34F26" size={50} />
-                            <FaCss3Alt color="#1572B6" size={60} />
-                            <FaJs color="#F7DF1E" size={50} />
-                        </TechIconsContainer>
-                    </MyPhoto>
-                </motion.div>
-            </AboutMe>
-        </>
-    );
+export function About() {
+  return (
+    <section className="w-full min-h-screen flex items-center justify-center bg-neutral-950 text-white px-6 py-20">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
+
+        {/* TEXTO */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <h2 className="text-sm tracking-[0.3em] text-gray-400">
+            SOBRE MIM
+          </h2>
+
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+            Por que me contratar para o seu próximo projeto?
+          </h1>
+
+          <p className="text-gray-400 leading-relaxed">
+            Sou estudante de Tecnologia da Informação e desenvolvedor
+            front-end em formação, com interesse em criar interfaces digitais
+            modernas e funcionais.
+            <br />
+            <br />
+            Gosto de transformar problemas em soluções práticas utilizando
+            tecnologia. Busco sempre escrever código limpo, criar experiências
+            intuitivas e desenvolver projetos que realmente resolvam
+            necessidades do mundo real.
+          </p>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-4 bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition"
+          >
+            Ver Portfólio
+          </motion.button>
+        </motion.div>
+
+        {/* FOTO + TECNOLOGIAS */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center"
+        >
+          <div className="relative">
+            <img
+              src={MyPhotoAbout}
+              alt="Foto do Klarc Almeida"
+              className="w-72 h-72 object-cover rounded-2xl shadow-xl"
+            />
+          </div>
+
+          {/* ICONES TECNOLOGIAS */}
+          <div className="flex gap-6 mt-8 text-4xl text-gray-300">
+            <FaReact className="hover:text-cyan-400 transition" />
+            <FaNodeJs className="hover:text-green-500 transition" />
+            <FaHtml5 className="hover:text-orange-500 transition" />
+            <FaCss3Alt className="hover:text-blue-500 transition" />
+            <FaJs className="hover:text-yellow-400 transition" />
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
 }
