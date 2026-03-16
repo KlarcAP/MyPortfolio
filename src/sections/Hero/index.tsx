@@ -5,39 +5,37 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center"
+      className="relative w-full min-h-screen flex items-center bg-cover bg-center"
       style={{
         backgroundImage: `url(${foto})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
       <div className="absolute inset-0 bg-black/10"></div>
 
-      <div className="relative z-10 w-full justify-between px-10 md:px-20">
-        <motion.h1
-          className="text-white text-4xl md:text-9xl font-bold"
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Klarc
-        </motion.h1>
+      <div className="relative z-10 w-full justify-between px-6 md:flex px-2">
+        <div>
+          <motion.h1
+            className="text-white text-6xl md:text-9xl font-bold"
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Klarc
+          </motion.h1>
 
-        <motion.h1
-          className="text-white text-4xl md:text-9xl font-bold"
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          Almeida
-        </motion.h1>
-      </div>
+          <motion.h1
+            className="text-white text-6xl mb-8 md:text-9xl font-bold"
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Almeida
+          </motion.h1>
+        </div>
 
-      <div className="relative z-10 w-full place-items-end px-10 md:px-20">
-        <div className="w-60">
+        <div className="max-w-xs">
           <motion.p
-            className="text-white text-xl text-wrap"
+            className="text-white text-lg md:text-xl"
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -46,9 +44,9 @@ export default function HeroSection() {
             usuário.
           </motion.p>
 
-          <div className="w-full mt-8">
+          <div className="mt-8">
             <motion.a
-              className="text-white border border-white rounded-full bg-black/30 p-5"
+              className="text-white border border-white rounded-full bg-black/30 px-6 py-2 inline-block"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
