@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import logo from "../../assets/K.png";;
 
 const NavItem = [
   { name: "Home", link: "#home" },
@@ -38,7 +39,7 @@ const Header: React.FC = () => {
         }`}
       >
         {/* Logo / Nome */}
-        <span className="text-white font-semibold">Klarc</span>
+        <img src={logo} alt="Logo" className="w-15" />
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">

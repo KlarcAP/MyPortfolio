@@ -1,6 +1,6 @@
-import MyPhotoAbout from "../../assets/minhaFoto.jpeg";
+
 import { motion } from "framer-motion";
-import { FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
+import StackCarousel from "../../components/Carousel";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -32,16 +32,12 @@ export function About() {
             Por que me contratar para o seu próximo projeto?
           </h1>
 
-          <p className="text-gray-400 leading-relaxed">
-            Sou estudante de Tecnologia da Informação e desenvolvedor
-            front-end em formação, com interesse em criar interfaces digitais
-            modernas e funcionais.
-            <br />
-            <br />
-            Gosto de transformar problemas em soluções práticas utilizando
-            tecnologia. Busco sempre escrever código limpo, criar experiências
-            intuitivas e desenvolver projetos que realmente resolvam
-            necessidades do mundo real.
+          <p className="text-gray-400 text-justify leading-relaxed">
+            Sou estudante de Tecnologia da Informação com atuação prática em desenvolvimento front-end, utilizando tecnologias como React, TypeScript e Tailwind para construir interfaces modernas e responsivas.
+            <br/>
+            Tenho experiência em transformar demandas em soluções digitais objetivas, com foco em código limpo, organização e usabilidade. Busco desenvolver aplicações que realmente resolvam problemas e entreguem valor ao usuário.
+            <br/>
+            Estou em constante evolução técnica e procuro contribuir com projetos onde possa gerar impacto desde o início, aprendendo rápido e entregando com qualidade.
           </p>
 
           <motion.button
@@ -52,34 +48,9 @@ export function About() {
             Ver Portfólio
           </motion.button>
         </motion.div>
-
-        {/* FOTO + TECNOLOGIAS */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center"
-        >
-          <div className="relative">
-            <img
-              src={MyPhotoAbout}
-              alt="Foto do Klarc Almeida"
-              className="w-72 h-72 object-cover rounded-2xl shadow-xl"
-            />
-          </div>
-
-          {/* ICONES TECNOLOGIAS */}
-          <div className="flex gap-6 mt-8 text-4xl text-gray-300">
-            <FaReact className="hover:text-cyan-400 transition" />
-            <FaNodeJs className="hover:text-green-500 transition" />
-            <FaHtml5 className="hover:text-orange-500 transition" />
-            <FaCss3Alt className="hover:text-blue-500 transition" />
-            <FaJs className="hover:text-yellow-400 transition" />
-          </div>
-        </motion.div>
-
+        <StackCarousel />
       </div>
+      
     </section>
   );
 }
