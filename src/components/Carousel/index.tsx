@@ -3,11 +3,9 @@ import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 import reactIcon from "../../assets/icons/risoterm.png";
 import nextIcon from "../../assets/icons/nextjs.png";
-import tailwindIcon from "../../assets/icons/tailwind.png";
 import nodeIcon from "../../assets/icons/nodejs.png";
 import dockerIcon from "../../assets/icons/docker.png";
 import githubIcon from "../../assets/icons/github.png";
-import typescriptIcon from "../../assets/icons/typescript.png";
 
 const stacks = [
   { name: "React", icon: reactIcon },
