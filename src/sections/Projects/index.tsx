@@ -1,86 +1,133 @@
-import { motion } from "framer-motion"; // Importe do framer-motion
-import { Container, GridContainer, GridItem, Title } from './indexStyle';
-import Beconect from '../../assets/beconnect.png';
-import Risoflow from '../../assets/risoflow.png';
-import Dtmoney from '../../assets/dtmoney.png';
-import Petwalk from '../../assets/petwalk.png';
+import { motion } from "framer-motion";
+import Beconect from "../../assets/beconnect.png";
+import Risoflow from "../../assets/risoflow.png";
+import Dtmoney from "../../assets/dtmoney.png";
+import Petwalk from "../../assets/petwalk.png";
 
-// Variantes de animação
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2, // Intervalo entre as animações dos filhos
-      delayChildren: 0.3, // Atraso antes de iniciar
-    }
-  }
-};
+interface Project {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  techs: string[];
+  github: string;
+  demo: string;
+  size: "large" | "medium";
+}
 
-const itemVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 20 
+const projects: Project[] = [
+  {
+    id: 1,
+    image: Risoflow,
+    title: "Risoflow",
+    description: "Plataforma de gestão de processos",
+    techs: ["React", "TypeScript"],
+    github: "https://github.com/example/risoflow",
+    demo: "https://risoflow.example.com",
+    size: "large",
   },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0, 0.71, 0.2, 1.01]
-    }
+  {
+    id: 2,
+    image: Dtmoney,
+    title: "DT Money",
+    description: "Controle financeiro pessoal",
+    techs: ["React", "TypeScript"],
+    github: "https://github.com/example/dtmoney",
+    demo: "https://dtmoney.example.com",
+    size: "medium",
   },
-  hover: {
-    scale: 1.05,
-    boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
-    transition: { 
-      duration: 0.3 
-    }
-  }
-};
+  {
+    id: 3,
+    image: Beconect,
+    title: "Beconnect",
+    description: "Rede social corporativa",
+    techs: ["React", "TypeScript"],
+    github: "https://github.com/example/beconnect",
+    demo: "https://beconnect.example.com",
+    size: "medium",
+  },
+  {
+    id: 4,
+    image: Petwalk,
+    title: "Petwalk",
+    description: "Aplicativo para cuidadores de pets",
+    techs: ["React", "TypeScript"],
+    github: "https://github.com/example/petwalk",
+    demo: "https://petwalk.example.com",
+    size: "medium",
+  },
+];
 
-export function SectionProjects() {
+function ProjectCard({ project }) {
   return (
-    <Container>
-      <Title>PROJETOS</Title>
-      
-      <GridContainer
-        as={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Item 1 (Texto introdutório) */}
-        <GridItem
-          as={motion.div}
-          variants={itemVariants}
-          whileHover="hover"
-        >
-          <p>Aqui você encontra meus trabalhos mais recentes, desde interfaces até sistemas complexos.</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Explore meu trabalho ↓
-          </motion.button>
-        </GridItem>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="relative w-full h-full rounded-2xl overflow-hidden group cursor-pointer"
+    >
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        loading="lazy"
+      />
 
-        {/* Demais itens (Projetos) */}
-        {[Risoflow, Dtmoney, Beconect, Petwalk].map((img, index) => (
-          <GridItem
-            key={index}
-            as={motion.div}
-            variants={itemVariants}
-            whileHover="hover"
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+      {/* Content */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
+        <p className="text-sm opacity-90">{project.description}</p>
+
+        {/* Links */}
+        <div className="flex gap-3 mt-3">
+          {project.github !== "#" && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full hover:bg-white/30 transition"
+            >
+              GitHub
+            </a>
+          )}
+          {project.demo !== "#" && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full hover:bg-white/30 transition"
+            >
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export function Projects() {
+  return (
+    <section className="py-20 px-4 max-w-8xl mx-auto bg-neutral-950">
+      <h1 className="text-center mb-12 text-3xl font-bold text-white">Projetos</h1>
+
+      {/* Responsive grid – adjust spans to create a balanced layout */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[240px]">
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className={`
+              relative rounded-2xl overflow-hidden
+              ${project.size === "large" ? "md:col-span-2 md:row-span-2" : ""}
+              ${project.size === "medium" ? "md:col-span-2" : ""}
+            `}
           >
-            <motion.img 
-              src={img} 
-              alt={`Projeto ${index + 1}`}
-              whileHover={{ scale: 1.03 }}
-            />
-          </GridItem>
+            <ProjectCard project={project} />
+          </div>
         ))}
-      </GridContainer>
-    </Container>
+      </div>
+    </section>
   );
 }
