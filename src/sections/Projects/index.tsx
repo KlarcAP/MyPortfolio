@@ -58,63 +58,145 @@ const projects: Project[] = [
   },
 ];
 
+// Variants para animação em cascata
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 12,
+    },
+  },
+};
+
 function ProjectCard({ project }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300 }}
+      variants={item}
+      whileHover={{ scale: 1.04, y: -5 }}
+      whileTap={{ scale: 0.98 }}
       className="relative w-full h-full rounded-2xl overflow-hidden group cursor-pointer"
     >
-      <img
+      <motion.img
         src={project.image}
         alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-full object-cover"
         loading="lazy"
+        whileHover={{ scale: 1.15 }}
+        transition={{ duration: 0.6 }}
       />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      {/* Gradient overlay animado */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"
+        initial={{ opacity: 0.6 }}
+        whileHover={{ opacity: 0.9 }}
+        transition={{ duration: 0.3 }}
+      />
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-        <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileHover={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="absolute bottom-0 left-0 right-0 p-5 text-white"
+      >
+        <h3 className="text-xl font-semibold tracking-tight">
+          {project.title}
+        </h3>
         <p className="text-sm opacity-90">{project.description}</p>
+
+        {/* Techs animadas */}
+        <div className="flex flex-wrap gap-2 mt-2">
+          {project.techs.map((tech, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileHover={{ scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.05 }}
+              className="text-[10px] bg-white/20 px-2 py-1 rounded-full"
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </div>
 
         {/* Links */}
         <div className="flex gap-3 mt-3">
           {project.github !== "#" && (
-            <a
+            <motion.a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full hover:bg-white/30 transition"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full"
             >
               GitHub
-            </a>
+            </motion.a>
           )}
           {project.demo !== "#" && (
-            <a
+            <motion.a
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full hover:bg-white/30 transition"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full"
             >
               Live Demo
-            </a>
+            </motion.a>
           )}
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
 
 export function Projects() {
   return (
-    <section className="py-20 px-4 max-w-8xl mx-auto bg-neutral-950">
-      <h1 className="text-center mb-12 text-3xl font-bold text-white">Projetos</h1>
+    <section className="py-20 px-4 max-w-8xl mx-auto bg-neutral-950 text-white space-y-6">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-sm tracking-[0.3em] text-gray-400"
+      >
+        PROJETOS
+      </motion.h2>
 
-      {/* Responsive grid – adjust spans to create a balanced layout */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[240px]">
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl md:text-4xl font-bold leading-tight"
+      >
+        Veja os meus cases mais recentes
+      </motion.h1>
+
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[240px]"
+      >
         {projects.map((project) => (
           <div
             key={project.id}
@@ -127,7 +209,7 @@ export function Projects() {
             <ProjectCard project={project} />
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
