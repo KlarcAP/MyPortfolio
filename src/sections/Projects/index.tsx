@@ -15,6 +15,10 @@ interface Project {
   size: "large" | "medium";
 }
 
+interface ProjectCardProps {
+  project: Project;
+}
+
 const projects: Project[] = [
   {
     id: 1,
@@ -50,7 +54,7 @@ const projects: Project[] = [
     id: 4,
     image: Petwalk,
     title: "Petwalk",
-    description: "Aplicativo para cuidadores de pets",
+    description: "Aplicação para cuidadores de pets",
     techs: ["React", "TypeScript"],
     github: "https://github.com/example/petwalk",
     demo: "https://petwalk.example.com",
@@ -82,7 +86,8 @@ const item = {
   },
 };
 
-function ProjectCard({ project }) {
+// Componente corrigido com tipagem
+function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={item}
@@ -121,7 +126,7 @@ function ProjectCard({ project }) {
 
         {/* Techs animadas */}
         <div className="flex flex-wrap gap-2 mt-2">
-          {project.techs.map((tech, index) => (
+          {project.techs.map((tech: string, index: number) => (
             <motion.span
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -197,7 +202,7 @@ export function Projects() {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[240px]"
       >
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           <div
             key={project.id}
             className={`

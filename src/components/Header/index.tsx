@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import logo from "../../assets/K.png";;
+import logo from "../../assets/K.png";
 
-const NavItem = [
-  { name: "Home", link: "#home" },
+interface NavItem {
+  name: string;
+  link: string;
+}
+
+const navItems: NavItem[] = [
+  { name: "Inicio", link: "#home" },
   { name: "Sobre", link: "#about" },
   { name: "Portfólio", link: "#projects" },
   { name: "Habilidades", link: "#skills" },
@@ -11,17 +16,58 @@ const NavItem = [
 ];
 
 const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
+  // Smooth scroll handler
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      const offset = 100;
+      const top = element.offsetTop - offset;
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Active section observer
   useEffect(() => {
-    const handleScroll = () => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll effect for header background
+  useEffect(() => {
+    const handleScrollEvent = () => {
       setIsScrolled(window.scrollY > 80);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollEvent);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScrollEvent);
   }, []);
 
   return (
@@ -38,26 +84,39 @@ const Header: React.FC = () => {
             : "bg-black/40 backdrop-blur border-white/30"
         }`}
       >
-        {/* Logo / Nome */}
-        <img src={logo} alt="Logo" className="w-15" />
+        {/* Logo */}
+        <img 
+          src={logo} 
+          alt="Logo" 
+          className="w-10 h-10" // Improved sizing
+        />
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
-          {NavItem.map((item) => (
-            <a
-              key={item.name}
-              href={item.link}
-              className="text-gray-300 hover:text-white transition"
-            >
-              {item.name}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const id = item.link.replace("#", "");
+
+            return (
+              <a
+                key={item.name}
+                onClick={() => handleScroll(id)}
+                className={`cursor-pointer transition ${
+                  activeSection === id
+                    ? "text-white font-semibold"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                {item.name}
+              </a>
+            );
+          })}
         </div>
 
-        {/* Botão Mobile */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
           ☰
         </button>
@@ -66,16 +125,26 @@ const Header: React.FC = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-20 w-[90%] bg-black/90 backdrop-blur-lg border border-white/20 rounded-xl p-6 flex flex-col items-center gap-6 md:hidden">
-          {NavItem.map((item) => (
-            <a
-              key={item.name}
-              href={item.link}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-300 hover:text-white text-lg"
-            >
-              {item.name}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const id = item.link.replace("#", "");
+
+            return (
+              <a
+                key={item.name}
+                onClick={() => {
+                  handleScroll(id);
+                  setMenuOpen(false);
+                }}
+                className={`text-lg transition ${
+                  activeSection === id
+                    ? "text-white font-semibold"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                {item.name}
+              </a>
+            );
+          })}
         </div>
       )}
     </motion.header>

@@ -13,7 +13,7 @@ const fadeUp = {
 
 export function About() {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center bg-neutral-950 text-white px-6 py-20">
+    <section id="about" className="w-full min-h-screen flex items-center justify-center bg-neutral-950 text-white px-6 py-20">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
 
         {/* TEXTO */}

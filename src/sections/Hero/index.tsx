@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/10"></div>
 
       <div className="relative z-10 w-full justify-between px-6 md:flex px-2">
-        <div>
+        <div className="max-w-md space-y-4 md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl 2xl:space-y-6">
           <motion.h1
             className="text-white text-6xl md:text-9xl font-bold"
             initial={{ opacity: 0, y: 80 }}
