@@ -12,10 +12,10 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-black/10"></div>
 
-      <div className="relative z-10 w-full justify-between px-6 md:flex px-2">
-        <div className="max-w-md space-y-4 md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl 2xl:space-y-6">
+      <div className="relative z-10 w-full px-2 sm:px-6 flex flex-col gap-10 justify-center md:flex-row md:items-end md:justify-between">
+        <div className="w-full max-w-full space-y-4 md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl 2xl:space-y-6">
           <motion.h1
-            className="text-white text-6xl md:text-9xl font-bold"
+            className="text-white text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-tight"
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -24,7 +24,7 @@ export default function HeroSection() {
           </motion.h1>
 
           <motion.h1
-            className="text-white text-6xl mb-8 md:text-9xl font-bold"
+            className="text-white text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-8 font-bold leading-tight"
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -33,9 +33,9 @@ export default function HeroSection() {
           </motion.h1>
         </div>
 
-        <div className="max-w-xs">
+        <div className="w-full max-w-full md:max-w-xs">
           <motion.p
-            className="text-white text-lg md:text-xl"
+            className="text-white text-base sm:text-lg md:text-xl"
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -46,11 +46,11 @@ export default function HeroSection() {
 
           <div className="mt-8">
             <motion.a
-              className="text-white border border-white rounded-full bg-black/30 px-6 py-2 inline-block"
+              className="pointer-events-auto cursor-pointer text-white border border-white rounded-full bg-black/30 px-6 py-2 inline-block"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              whileHover={{ scale: 1.08 }}
+              transition={{ duration: 1 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Descubra mais

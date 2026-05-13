@@ -11,8 +11,8 @@ const navItems: NavItem[] = [
   { name: "Inicio", link: "#home" },
   { name: "Sobre", link: "#about" },
   { name: "Portfólio", link: "#projects" },
-  { name: "Habilidades", link: "#skills" },
   { name: "Formação", link: "#education" },
+  { name: "Contato", link: "#contact" },
 ];
 
 const Header: React.FC = () => {
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
         root: null,
         rootMargin: "-50% 0px -50% 0px",
         threshold: 0,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -72,27 +72,27 @@ const Header: React.FC = () => {
 
   return (
     <motion.header
-      className="fixed top-6 left-0 w-full z-50 flex justify-center"
+      className="fixed top-4 left-0 w-full z-50 flex justify-center px-4 pointer-events-none"
       initial={{ opacity: 0, x: 80 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1.5 }}
     >
       <nav
-        className={`w-[95%] max-w-6xl flex items-center justify-between px-6 py-3 rounded-full border transition-all duration-300 ${
+        className={`pointer-events-auto w-full max-w-6xl flex items-center justify-between gap-4 rounded-[34px] border px-5 transition-all duration-300 ${
           isScrolled
-            ? "bg-black/70 backdrop-blur-md shadow-lg border-gray-200"
-            : "bg-black/40 backdrop-blur border-white/30"
+            ? "bg-black/80 border-white/10 shadow-2xl shadow-black/40 backdrop-blur-2xl"
+            : "bg-black/30 border-white/10 backdrop-blur-xl"
         }`}
       >
         {/* Logo */}
-        <img 
-          src={logo} 
-          alt="Logo" 
-          className="w-10 h-10" // Improved sizing
-        />
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full">
+            <img src={logo} alt="Logo" />
+          </div>
+        </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => {
             const id = item.link.replace("#", "");
 
@@ -100,13 +100,20 @@ const Header: React.FC = () => {
               <a
                 key={item.name}
                 onClick={() => handleScroll(id)}
-                className={`cursor-pointer transition ${
+                className={`group relative cursor-pointer text-sm uppercase tracking-[0.24em] transition-all duration-300 ${
                   activeSection === id
                     ? "text-white font-semibold"
                     : "text-gray-300 hover:text-white"
                 }`}
               >
                 {item.name}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] w-full rounded-full transition-all duration-300 ${
+                    activeSection === id
+                      ? "bg-gradient-to-r from-cyan-400 to-violet-400"
+                      : "bg-transparent group-hover:bg-white/40"
+                  }`}
+                />
               </a>
             );
           })}
@@ -114,7 +121,8 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white text-2xl"
+          type="button"
+          className="md:hidden text-white text-2xl  p-3 rounded-full"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -124,28 +132,34 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-20 w-[90%] bg-black/90 backdrop-blur-lg border border-white/20 rounded-xl p-6 flex flex-col items-center gap-6 md:hidden">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+          className="absolute top-20 w-[90%] bg-black/90 backdrop-blur-2xl border border-white/15 rounded-[28px] p-5 flex flex-col items-center gap-4 md:hidden shadow-2xl shadow-black/30"
+        >
           {navItems.map((item) => {
             const id = item.link.replace("#", "");
 
             return (
-              <a
+              <button
                 key={item.name}
+                type="button"
                 onClick={() => {
                   handleScroll(id);
                   setMenuOpen(false);
                 }}
-                className={`text-lg transition ${
+                className={`w-full text-center text-base uppercase tracking-[0.18em] transition-all duration-300 ${
                   activeSection === id
                     ? "text-white font-semibold"
                     : "text-gray-300 hover:text-white"
                 }`}
               >
                 {item.name}
-              </a>
+              </button>
             );
           })}
-        </div>
+        </motion.div>
       )}
     </motion.header>
   );

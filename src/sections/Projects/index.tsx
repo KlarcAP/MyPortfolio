@@ -174,7 +174,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 
 export function Projects() {
   return (
-    <section className="py-20 px-4 max-w-8xl mx-auto bg-neutral-950 text-white space-y-6">
+    <section id="projects" className="py-20 px-4 max-w-8xl mx-auto bg-neutral-950 text-white space-y-6">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -200,13 +200,14 @@ export function Projects() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[240px]"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 auto-rows-min sm:auto-rows-[240px]"
       >
         {projects.map((project: Project) => (
           <div
             key={project.id}
             className={`
               relative rounded-2xl overflow-hidden
+              min-h-[220px]
               ${project.size === "large" ? "md:col-span-2 md:row-span-2" : ""}
               ${project.size === "medium" ? "md:col-span-2" : ""}
             `}
