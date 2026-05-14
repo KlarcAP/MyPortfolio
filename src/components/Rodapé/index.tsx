@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,25 +10,25 @@ export function Footer() {
     {
       name: "GitHub",
       url: "https://github.com/KlarcAP",
-      icon: "🐙",
+      icon: <FaGithub />,
       color: "hover:text-gray-300",
     },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/klarc-almeida-908774162/",
-      icon: "💼",
+      icon: <FaLinkedin />,
       color: "hover:text-blue-400",
     },
     {
       name: "Email",
       url: "mailto:klarcalmeida@gmail.com",
-      icon: "✉️",
+      icon: <CgMail />,
       color: "hover:text-cyan-400",
     },
     {
       name: "WhatsApp",
       url: "https://wa.me/5571993791975",
-      icon: "📱",
+      icon: <FaWhatsapp />,
       color: "hover:text-green-400",
     },
   ];

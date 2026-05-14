@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
 
 export function CTA() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -132,7 +134,11 @@ export function CTA() {
               whileTap={{ scale: 0.98 }}
               className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-full font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 overflow-hidden"
             >
-              <span className="relative z-10">💌 Enviar Proposta</span>
+              <span className="relative z-10">
+                {" "}
+                <CgMail />
+                Enviar Proposta{" "}
+              </span>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
 
@@ -145,7 +151,7 @@ export function CTA() {
               className="group px-8 py-4 border border-white/20 rounded-full font-semibold text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
               <span className="flex items-center gap-2">
-                💼 LinkedIn
+                <FaLinkedin /> Linkedin
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                   fill="currentColor"
@@ -169,7 +175,7 @@ export function CTA() {
               className="group px-8 py-4 border border-white/20 rounded-full font-semibold text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 transition-all duration-300"
             >
               <span className="flex items-center gap-2">
-                📱 WhatsApp
+                <FaWhatsapp /> WhatsApp
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                   fill="currentColor"
@@ -214,7 +220,7 @@ export function CTA() {
           {/* Footer message */}
           <motion.div variants={item} className="pt-8 border-t border-white/10">
             <p className="text-sm text-gray-500">
-              ✨ Aberto a oportunidades remotas e presenciais • Brasil &
+              Aberto a oportunidades remotas e presenciais • Brasil &
               Internacional
             </p>
           </motion.div>
